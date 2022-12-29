@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<VerticalStackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:JOIN.Helpers"
+             x:Class="JOIN.ViewControls.CommonControls.ErrorIndicator"
+                     IsVisible="false"
+                     Padding="48,12">
+
+    <Label
+        x:Name="imgError"
+        FontFamily="IconFont"
+        Text="{x:Static helpers:IconFont.AlertBox}"
+        FontSize="30"
+        TextColor="{StaticResource Primary}"/>
+
+    <Label
+        Margin="0,12,0,0"
+        Text="Ops!"
+        Style="{StaticResource MediumLightText18}"
+        HorizontalOptions="Center"
+        HorizontalTextAlignment="Center"/>
+
+    <Label
+        x:Name="lblErrorText"
+        Style="{StaticResource RegularLightTest14}"
+        LineBreakMode="WordWrap"
+        HorizontalOptions="Center"
+        HorizontalTextAlignment="Center"/>
+</VerticalStackLayout>
