@@ -71,10 +71,6 @@
 
 	<ItemGroup>
 	  <Folder Include="IViews\" />
-	  <Folder Include="ViewControls\" />
-	  <Folder Include="ViewModels\Base\" />
-	  <Folder Include="Nuova cartella\" />
-	  <Folder Include="Views\Base\" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -82,6 +78,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="ViewControls\CommonControls\ErrorIndicator.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewControls\CommonControls\LoadingIndicator.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewModels\Base\NewContent1.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Base\PageBase.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\StartPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

@@ -1,6 +1,6 @@
 ﻿
-
 namespace JOIN.ViewModels.Base;
+
     public partial class AppViewModelBase : ViewModelBase
     {
         public INavigation NavigationService { get; set; }
@@ -11,5 +11,13 @@ namespace JOIN.ViewModels.Base;
         {
         _appApiService = _appApiService;
         }
+
+    [RelayCommand]
+    private async Task NavigateBack() => 
+        await NavigationService.PopAsync();
+
+    [RelayCommand]
+    private async Task CloseModal() =>
+        await NavigationService.PopModalAsync(); 
     }
 
