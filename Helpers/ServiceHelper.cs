@@ -1,7 +1,7 @@
 ﻿
 namespace JOIN.Helpers;
 
-public class ServiceHelper
+public static class ServiceHelper
 {
     public static TService GetService<TService>() => 
         Current.GetService<TService>();

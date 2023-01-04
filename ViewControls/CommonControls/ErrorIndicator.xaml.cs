@@ -9,8 +9,7 @@ public partial class ErrorIndicator : VerticalStackLayout
 		false,
 		BindingMode.OneWay,
 		null,
-		SetIsError
-		);
+		SetIsError);
 
 	public bool IsError { 
 		get => (bool)GetValue(IsErrorProperty);

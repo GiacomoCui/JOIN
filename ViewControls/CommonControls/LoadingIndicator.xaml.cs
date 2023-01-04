@@ -30,10 +30,10 @@ public partial class LoadingIndicator : VerticalStackLayout
         "LoadingText",
         typeof(string),
         typeof(LoadingIndicator),
-        false,
+        string.Empty,
         BindingMode.OneWay,
         null,
-        SetIsBusy
+        SetLoadingText
         );
     public string LoadingText
     {

@@ -1,7 +1,7 @@
 ﻿
 namespace JOIN.Models;
 
-public static class Constant
+public static class Constants
 {
     public static string ApplicationName = "ILJOIN";
     public static string EmailAddress = @" gia.cui@stud.uniroma3.it ";

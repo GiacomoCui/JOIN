@@ -7,10 +7,14 @@ namespace JOIN.ViewModels.Base;
         public Page PageService { get; set; }
         protected IApiService _appApiService { get; set; }
 
-        public AppViewModelBase() : base()
+        public AppViewModelBase(IApiService appApiService) : base()
         {
-        _appApiService = _appApiService;
+        _appApiService = appApiService;
         }
+    public AppViewModelBase() : base()
+    {
+
+    }
 
     [RelayCommand]
     private async Task NavigateBack() => 

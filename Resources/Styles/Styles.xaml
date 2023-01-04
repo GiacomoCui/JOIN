@@ -144,7 +144,7 @@
             </VisualStateGroupList>
         </Setter>
     </Style>
-    
+
     <!-- Icon Button Style -->
 
     <Style TargetType="ImageButton" x:Key="IconButtonStyle">
@@ -202,26 +202,42 @@
         <Setter Property="TextColor" Value="White"/>
     </Style>
 
-    <Style TargetType="Label" x:Key="BaseRegularmDarkLabelTextStyle" BasedOn="BaseRegularLightLabelTextStyle">
+    <Style TargetType="Label" x:Key="BaseRegularDarkLabelTextStyle" BasedOn="{StaticResource BaseRegularLightLabelTextStyle}">
         <Setter Property="TextColor" Value="Black"/>
     </Style>
 
-    <Style TargetType="Label" x:Key="RegularLightText20" BasedOn="BaseRegularLightLabelTextStyle">
+    <Style TargetType="Label" x:Key="RegularLightText20" BasedOn="{StaticResource BaseRegularLightLabelTextStyle}">
         <Setter Property="FontSize" Value="20"/>
     </Style>
 
-    <Style TargetType="Label" x:Key="RegularLightText18" BasedOn="BaseRegularLightLabelTextStyle">
+    <Style TargetType="Label" x:Key="RegularLightText18" BasedOn="{StaticResource BaseRegularLightLabelTextStyle}">
         <Setter Property="FontSize" Value="18"/>
     </Style>
 
-    <Style TargetType="Label" x:Key="RegularLightText14" BasedOn="BaseRegularLightLabelTextStyle">
+    <Style TargetType="Label" x:Key="RegularLightText14" BasedOn="{StaticResource BaseRegularLightLabelTextStyle}">
         <Setter Property="FontSize" Value="14"/>
     </Style>
 
-    <Style TargetType="Label" x:Key="RegularLightText10" BasedOn="BaseRegularLightLabelTextStyle">
+    <Style TargetType="Label" x:Key="RegularLightText10" BasedOn="{StaticResource BaseRegularLightLabelTextStyle}">
         <Setter Property="FontSize" Value="10"/>
     </Style>
-    
+
+    <Style TargetType="Label" x:Key="RegularDarkText20" BasedOn="{StaticResource BaseRegularDarkLabelTextStyle}">
+        <Setter Property="FontSize" Value="20"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="RegularDarkText18" BasedOn="{StaticResource BaseRegularDarkLabelTextStyle}">
+        <Setter Property="FontSize" Value="18"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="RegularDarkText14" BasedOn="{StaticResource BaseRegularDarkLabelTextStyle}">
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="RegularDarkText10" BasedOn="{StaticResource BaseRegularDarkLabelTextStyle}">
+        <Setter Property="FontSize" Value="10"/>
+    </Style>
+
     <!-- Medium Label Style -->
     
     <Style TargetType="Label" x:Key="BaseMediumLightLabelTextStyle">
@@ -231,27 +247,47 @@
         <Setter Property="TextColor" Value="White"/>
     </Style>
 
-    <Style TargetType="Label" x:Key="BaseMediumDarkLabelTextStyle" BasedOn="BaseMediumLightLabelTextStyle">
+    <Style TargetType="Label" x:Key="BaseMediumDarkLabelTextStyle" BasedOn="{StaticResource BaseMediumLightLabelTextStyle}">
         <Setter Property="TextColor" Value="Black"/>
     </Style>
 
-    <Style TargetType="Label" x:Key="MediumLightText20" BasedOn="BaseMediumLightLabelTextStyle">
+    <Style TargetType="Label" x:Key="MediumLightText20" BasedOn="{StaticResource BaseMediumLightLabelTextStyle}">
         <Setter Property="FontSize" Value="20"/>
     </Style>
 
-    <Style TargetType="Label" x:Key="MediumLightText18" BasedOn="BaseMediumLightLabelTextStyle">
+    <Style TargetType="Label" x:Key="MediumLightText18" BasedOn="{StaticResource BaseMediumLightLabelTextStyle}">
         <Setter Property="FontSize" Value="18"/>
     </Style>
 
-    <Style TargetType="Label" x:Key="MediumLightText14" BasedOn="BaseMediumLightLabelTextStyle">
+    <Style TargetType="Label" x:Key="MediumLightText14" BasedOn="{StaticResource BaseMediumLightLabelTextStyle}">
         <Setter Property="FontSize" Value="14"/>
     </Style>
 
-    <Style TargetType="Label" x:Key="MediumLightText10" BasedOn="BaseMediumLightLabelTextStyle">
+    <Style TargetType="Label" x:Key="MediumLightText10" BasedOn="{StaticResource BaseMediumLightLabelTextStyle}">
         <Setter Property="FontSize" Value="10"/>
     </Style>
 
-    <Style TargetType="Label" x:Key="PageHeaderStyle" BasedOn="BaseMediumLightLabelTestStyle">
+    <Style TargetType="Label" x:Key="MediumDarkText20" BasedOn="{StaticResource BaseMediumDarkLabelTextStyle}">
+        <Setter Property="FontSize" Value="20"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="MediumDarkText18" BasedOn="{StaticResource BaseMediumDarkLabelTextStyle}">
+        <Setter Property="FontSize" Value="18"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="MediumDarkText14" BasedOn="{StaticResource BaseMediumDarkLabelTextStyle}">
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="MediumDarkText10" BasedOn="{StaticResource BaseMediumDarkLabelTextStyle}">
+        <Setter Property="FontSize" Value="10"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="PageLightHeaderStyle" BasedOn="{StaticResource BaseMediumLightLabelTextStyle}">
+        <Setter Property="FontSize" Value="Header"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="PageDarkHeaderStyle" BasedOn="{StaticResource BaseMediumDarkLabelTextStyle}">
         <Setter Property="FontSize" Value="Header"/>
     </Style>
 

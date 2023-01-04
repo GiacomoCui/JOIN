@@ -10,7 +10,7 @@
         x:Name="imgError"
         FontFamily="IconFont"
         Text="{x:Static helpers:IconFont.AlertBox}"
-        FontSize="30"
+        FontSize="64"
         TextColor="{StaticResource Primary}"/>
 
     <Label
@@ -22,7 +22,8 @@
 
     <Label
         x:Name="lblErrorText"
-        Style="{StaticResource RegularLightTest14}"
+        Style="{StaticResource RegularLightText14}"
+        Text="Error Occoured, Retry!"
         LineBreakMode="WordWrap"
         HorizontalOptions="Center"
         HorizontalTextAlignment="Center"/>

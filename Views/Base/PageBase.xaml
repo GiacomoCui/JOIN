@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
+    <!-- Trovare il modo di usare il font con le icone per presentare il menu e le impostazioni-->
+    
+    
+    <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
@@ -58,11 +62,13 @@
 
             <ImageButton
                 x:Name="HamburgherButton"
-                Source="{x:Static helpers:IconFont.Hamburger}"
+                Source="iconayoutube.png"
                 VerticalOptions="Center"
                 HorizontalOptions="Start"
                 Style="{StaticResource IconButtonStyle}"
-                Grid.Column="0"/>
+                Grid.Column="0"
+                Command="{Binding NavigateBackCommand, Mode=OneWay}"/>
+            
             <!-- Da implementare il menu -->
             
             <ImageButton
@@ -83,8 +89,15 @@
                 HorizontalTextAlignment="Center"
                 VerticalTextAlignment="Center"
                 Margin="6,0,6,-1"
-                Style="{StaticResource PageHeaderStyle}"
+                Style="{StaticResource PageDarkHeaderStyle}"
                 />
+
+            <Grid 
+                x:Name="PageIconsGrid"
+                Grid.Column="2"
+                Margin="0,4"
+                VerticalOptions="Center"
+                HorizontalOptions="End"/>
 
         </Grid>
 

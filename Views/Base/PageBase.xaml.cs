@@ -4,7 +4,7 @@ namespace JOIN.Views.Base;
 public partial class PageBase : ContentPage
 {
 	public IList<Microsoft.Maui.IView> PageContent => PageContentGrid.Children;
-    //public IList<Microsoft.Maui.IView> PageIcons => PageIconsGrid.Children;
+    public IList<Microsoft.Maui.IView> PageIcons => PageIconsGrid.Children;
 
 	protected bool IsBackButtonEnabled
 	{
@@ -39,7 +39,7 @@ public partial class PageBase : ContentPage
     public static readonly BindableProperty PageModeProperty = BindableProperty.Create(
         nameof(PageMode),
         typeof(PageMode),
-        typeof(PageMode),
+        typeof(PageBase),
 		PageMode.None,
         propertyChanged: OnPageModePropertyChanged);
 
@@ -132,7 +132,9 @@ public partial class PageBase : ContentPage
 		InitializeComponent();
 
 		NavigationPage.SetHasNavigationBar(this, false);
+
 		SetPageMode(PageMode.None);
+
 		SetContentDisplayMode(ContentDisplayMode.NoNavigationBar);
 	}
 }
