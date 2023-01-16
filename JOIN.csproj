@@ -12,10 +12,10 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>JOIN</ApplicationTitle>
+		<ApplicationTitle>ILJOIN</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.join</ApplicationId>
+		<ApplicationId>com.companyname.iljoin</ApplicationId>
 		<ApplicationIdGuid>727023c8-32b5-48be-9009-c3076d24cad8</ApplicationIdGuid>
 
 		<!-- Versions -->

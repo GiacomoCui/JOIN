@@ -23,8 +23,9 @@
     <baseviews:ViewBase.PageContent>
 
         <Label
-            Style="{StaticResource MediumDarkText14}"
+            Style="{StaticResource RegularDarkText18}"
             IsVisible="{Binding DataLoaded, Mode=OneWay}"
+            Text="Hello from UI"
             VerticalOptions="Center"
             HorizontalOptions="Center"/>
 

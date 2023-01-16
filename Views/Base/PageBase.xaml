@@ -1,8 +1,4 @@
-
-    <!-- Trovare il modo di usare il font con le icone per presentare il menu e le impostazioni-->
-    
-    
-    <?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
@@ -10,6 +6,8 @@
              xmlns:basecontrols="clr-namespace:JOIN.ViewControls.CommonControls"
              xmlns:helpers="clr-namespace:JOIN.Helpers"
              x:Class="JOIN.Views.Base.PageBase">
+
+    <!-- Trovare il modo di usare il font con le icone per presentare il menu e le impostazioni-->
 
     <Grid
         IgnoreSafeArea="True">
@@ -20,7 +18,7 @@
         </Grid.RowDefinitions>
 
         <!--Error Indicator-->
-        
+
         <basecontrols:ErrorIndicator
             Grid.Row="2"
             IsError="{Binding IsErrorState, Mode=OneWay}"
@@ -28,16 +26,16 @@
             ErrorText="{Binding ErrorText, Mode=OneWay}"
             VerticalOptions="Center"
             HorizontalOptions="Center"/>
-        
+
 
         <!--Grid to contain Page Content-->
-        
+
         <Grid
             x:Name="PageContentGrid"
             IgnoreSafeArea="True"/>
 
         <!--Loading Indicator-->
-        
+
         <basecontrols:LoadingIndicator
             Grid.Row="2"
             IsBusy="{Binding IsBusy, Mode=OneWay}"
@@ -68,9 +66,9 @@
                 Style="{StaticResource IconButtonStyle}"
                 Grid.Column="0"
                 Command="{Binding NavigateBackCommand, Mode=OneWay}"/>
-            
+
             <!-- Da implementare il menu -->
-            
+
             <ImageButton
                 x:Name="CloseButton"
                 Source="{x:Static helpers:IconFont.Cross}"
@@ -101,9 +99,9 @@
 
         </Grid>
 
-        
+
 
 
     </Grid>
-    
+
 </ContentPage>

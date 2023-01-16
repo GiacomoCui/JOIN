@@ -9,6 +9,9 @@ global using JOIN.ViewModels.Base;
 global using JOIN.Helpers;
 global using JOIN.ViewModels;
 global using JOIN.Views.Base;
+global using Maui.App.Framework.Exceptions;
+global using CommunityToolkit.Mvvm.ComponentModel;
+global using System.Collections.ObjectModel;
 
 
 
