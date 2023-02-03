@@ -66,8 +66,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0-preview3" />
-	  <PackageReference Include="MonkeyCache.FileStore" Version="2.0.0-beta" />
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
+	  <PackageReference Include="MonkeyCache.FileStore" Version="2.0.1" />
 	</ItemGroup>
 
 	<ItemGroup>

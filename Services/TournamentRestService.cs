@@ -2,15 +2,15 @@
 
 
 
-namespace JOIN.Services
-{
-    public class TournamentRestService : RestServiceBase, IApiService
-    {
-        public TournamentRestService(IConnectivity connectivity, IBarrel cacheBarrel) : base(connectivity, cacheBarrel)
-        {
-            SetBaseURL(Constants.ApiServiceURL);
-        }
+namespace JOIN.Services;
 
-        public async Task<>
+public class TournamentRestService : RestServiceBase, IApiService
+{
+    public TournamentRestService(IConnectivity connectivity, IBarrel cacheBarrel) : base(connectivity, cacheBarrel)
+    {
+        //SetBaseURL(Constants.ApiServiceURL);
     }
+
+    //public async Task<>
 }
+
