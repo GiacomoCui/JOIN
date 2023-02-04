@@ -71,10 +71,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="IViews\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <ProjectReference Include="..\Maui.App.Framework\Maui.App.Framework.csproj" />
 	</ItemGroup>
 
@@ -91,6 +87,10 @@
 	  <MauiXaml Update="Views\StartPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="IViews\" />
 	</ItemGroup>
 
 </Project>
