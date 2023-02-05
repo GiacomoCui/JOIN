@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JOIN.Views.TournamentPage"
+             Title="{Binding Name}">
+
+    <!-- Informazioni generali riguardanti il torneo -->
+  <StackLayout Padding="20">
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+      <Image Source="{Binding ImageUrl}" WidthRequest="200" HeightRequest="200"/>
+      <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Large"/>
+      <Label Text="{Binding Game}" FontSize="Medium"/>
+      <Label Text="{Binding Date}" FontSize="Medium"/>
+    </StackLayout>
+
+    <!-- Informazioni sui premi per i primi 3 classificati -->
+    <StackLayout Margin="20,0,0,0">
+      <Label Text="Premi per i primi 3 classificati:" FontAttributes="Bold"/>
+      <Label Text="1° classificato: {Binding Prize1}" />
+      <Label Text="2° classificato: {Binding Prize2}" />
+      <Label Text="3° classificato: {Binding Prize3}" />
+    </StackLayout>
+
+    <!--Lista dei partecipanti al torneo -->
+    <StackLayout Margin="20,0,0,0">
+      <Label Text="Partecipanti:" FontAttributes="Bold"/>
+      <ListView ItemsSource="{Binding Participants}"
+                HasUnevenRows="True">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <StackLayout Padding="10">
+                <Label Text="{Binding Name}" />
+                <Label Text="{Binding Team}" />
+                <Label Text="{Binding Country}" />
+                <Label Text="{Binding Birthdate}" />
+                <Label Text="Discord: {Binding DiscordContact}" />
+                <Label Text="Twitter: {Binding TwitterContact}" />
+              </StackLayout>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+
+    <!-- Pulsante per iscriversi -->
+    <StackLayout HorizontalOptions="EndAndExpand" Margin="0,20,0,0">
+      <Button Text="Iscrizione" 
+              Command="{Binding RegisterCommand}" />
+    </StackLayout>
+  </StackLayout>
+
+</ContentPage>
