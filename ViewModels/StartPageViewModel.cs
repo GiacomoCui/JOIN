@@ -14,7 +14,7 @@
         {
         Title = "ILJOIN";
         } 
-
+    //aspetta che sia terminata una ricerca
     public override async void OnNavigatedTo(object parameters)
     {
         await Search();

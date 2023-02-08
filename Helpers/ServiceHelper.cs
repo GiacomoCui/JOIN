@@ -14,7 +14,7 @@ public static class ServiceHelper
 #elif IOS
             MauiUIApplicationDelegate.Current.Services;
 #elif MACCATALYST
-        MauiUIApplicationDelegate.Current.Services;
+            MauiUIApplicationDelegate.Current.Services;
 #else
             null;
 #endif

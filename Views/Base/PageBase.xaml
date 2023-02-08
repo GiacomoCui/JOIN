@@ -8,6 +8,7 @@
              x:Class="JOIN.Views.Base.PageBase">
 
     <!-- Trovare il modo di usare il font con le icone per presentare il menu e le impostazioni-->
+    <!--  Canbiare altrimenti con immagini per le icone -->
 
     <Grid
         IgnoreSafeArea="True">

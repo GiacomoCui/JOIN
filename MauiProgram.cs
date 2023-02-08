@@ -4,11 +4,12 @@ using MonkeyCache.FileStore;
 
 namespace JOIN;
 
+
 public static class MauiProgram
 {
 	public static MauiApp CreateMauiApp()
 	{
-		var builder = MauiApp.CreateBuilder();
+		var builder = MauiApp.CreateBuilder(); //configurazione dei font inseriti nell'applicazione
 		builder
 			.UseMauiApp<App>()
 			.ConfigureFonts(fonts =>
@@ -18,7 +19,7 @@ public static class MauiProgram
 				fonts.AddFont("materialdesignicons-webdont.ttf", "IconFont");
 			}).ConfigureLifecycleEvents(events =>
 			{
-			#if ANDROID
+			#if ANDROID //evento per i dispositivi Android. Se si è su android, rende la barra di stato del telefono trasparente.
 
 				events.AddAndroid(android => android.OnCreate((activity, bundle) => MakeStatusBarTranslucent(activity)));
 
@@ -47,6 +48,7 @@ public static class MauiProgram
 		services.AddSingleton<IBarrel>(Barrel.Current);
 
 		//Register API Services
+		//da implementare con la classe API
 
 
 		services.AddSingleton<StartPageViewModel>();
