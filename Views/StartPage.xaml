@@ -22,13 +22,25 @@
 
     <baseviews:ViewBase.PageContent>
 
-        <Label
+        <Label 
             Style="{StaticResource RegularDarkText18}"
             IsVisible="{Binding DataLoaded, Mode=OneWay}"
             Text="Hello from UI"
             VerticalOptions="Center"
             HorizontalOptions="Center"/>
 
+            <Border WidthRequest="100"
+                    HeightRequest="100"
+                    Stroke="orange"
+                    StrokeThickness="4"
+                    BackgroundColor="Azure"
+                    StrokeShape="RoundRectangle 100">
+
+                <ImageButton Source="dotnet_bot.png"        
+                     Command="{Binding ProfiloCommand}"/>
+
+            </Border>
+               
     </baseviews:ViewBase.PageContent>
 
 </baseviews:ViewBase>

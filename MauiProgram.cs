@@ -1,4 +1,8 @@
 ﻿using JOIN.Models;
+using JOIN.Views.ProfiloUtente;
+using JOIN_App.ViewControls.Utenti;
+using JOIN_App.ViewModels.ProfiloUtente;
+using JOIN_App.Views.ProfiloUtente;
 using Microsoft.Maui.LifecycleEvents;
 using MonkeyCache.FileStore;
 
@@ -31,8 +35,16 @@ public static class MauiProgram
 			#endif
 			});
 
-		//Register Services
-		RegisterAppServices(builder.Services);
+        //Transient Page & ViewModel
+        builder.Services.AddTransient<PaginaProfiloUtente>();
+        builder.Services.AddTransient<ProfiloUtenteViewModel>();
+        builder.Services.AddTransient<PaginaProfiloModificabile>();
+        builder.Services.AddTransient<PaginaProfiloModificabileViewModel>();
+        builder.Services.AddTransient<Utente>();
+		
+
+        //Register Services
+        RegisterAppServices(builder.Services);
 
 		return builder.Build();
 	}

@@ -1,6 +1,10 @@
-﻿namespace JOIN.ViewModels;
+﻿using JOIN.Views.ProfiloUtente;
+using JOIN_App.ViewModels.ProfiloUtente;
+using JOIN_App.Views.ProfiloUtente;
 
-    public class StartPageViewModel : AppViewModelBase
+namespace JOIN.ViewModels;
+
+    public partial class StartPageViewModel : AppViewModelBase
     {
     private string nextToken =string.Empty;
     private string searchTerm = "";
@@ -18,6 +22,12 @@
     public override async void OnNavigatedTo(object parameters)
     {
         await Search();
+    }
+
+    [RelayCommand]
+    async Task ModificaProfilo()
+    {
+        await Shell.Current.GoToAsync($"{nameof(PaginaProfiloUtente)}");
     }
 
     private async Task Search()
