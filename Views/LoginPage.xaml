@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JOIN.Views.LoginPage"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False">
+    <!-- Contenuti della pagina di login -->
+    <ContentPage.Content>
+        <!-- StackLayout per allineare i controlli alla pagina -->
+        <StackLayout Padding="40" VerticalOptions="Center"
+                     HorizontalOptions="FillAndExpand">
+            <!-- Label per mostrare "Username" -->
+            <Label Text="Username:"/>
+            <!-- Campo di testo per inserire lo username -->
+            <Entry Placeholder="Username"/>
+            <!-- Label per mostrare "Password" -->
+            <Label Text="Password:"/>
+            <!-- Campo di testo per inserire la password -->
+            <Entry IsPassword="True" Placeholder="Password"/>
+            <!-- Pulsante per effettuare il login -->
+            <Button Text="Login" Clicked="Button_Clicked"/>
+            <!-- Label per mostrare "Register" -->
+            <Label Text="Register" HorizontalOptions="Center">
+                <!-- TapGestureRecognizer per intercettare il tap sulla label -->
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
