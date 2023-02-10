@@ -10,11 +10,7 @@
         Dark={StaticResource WindowBackgroundColorDark},
         Light={StaticResource WindowBackgroundColor}}">
 
-    <!--
-        The overall app visual hierarchy is defined here, along with navigation.
-        
-        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
-    -->
+    
 
     <Shell.Resources>
         <ResourceDictionary>
@@ -82,6 +78,16 @@
                     </VisualStateGroupList>
                 </Setter>
             </Style>
+            <x:String x:Key="trophy">&#xf091;</x:String>
+            <x:String x:Key="home">&#xf015;</x:String>
+            <x:String x:Key="gear">&#xf013;</x:String>
+            <x:String x:Key="light_dark">&#xf74a;</x:String>
+            <x:String x:Key="tournament">&#xf439;</x:String>
+            <x:String x:Key="gears">&#xf085;</x:String>
+
+        
+
+
         </ResourceDictionary>
     </Shell.Resources>
 
@@ -95,13 +101,14 @@
         <ShellContent ContentTemplate="{DataTemplate local:LoginPage}"/>
     </ShellItem>
 
-    <FlyoutItem Title="Join">
+    <FlyoutItem Title="JOIN">
         <FlyoutItem.Icon>
             <FontImageSource FontFamily="FAS"
                              Color="{AppThemeBinding
                                 Dark=white,
                                 Light={StaticResource SystemGray5Dark}}"
-                             Glyph="trophy_icon.png"/>
+                             Glyph="{StaticResource trophy}"
+                             Size="30"/>
         </FlyoutItem.Icon>
         <Tab Title="Home">
              <Tab.Icon>
@@ -109,7 +116,8 @@
                              Color="{AppThemeBinding
                                 Dark=white,
                                 Light={StaticResource SystemGray5Dark}}"
-                             Glyph="home_icon.png"/>
+                             Glyph="{StaticResource home}"
+                             Size="30"/>
              </Tab.Icon>
              <ShellContent ContentTemplate="{DataTemplate local:StartPage}" Route="StartPage" />
         </Tab>
@@ -119,20 +127,22 @@
                              Color="{AppThemeBinding
                                 Dark=white,
                                 Light={StaticResource SystemGray5Dark}}"
-                             Glyph="bracket_icon.png"/>
+                             Glyph="{StaticResource tournament}"
+                             Size="30"/>
              </Tab.Icon>
              <ShellContent ContentTemplate="{DataTemplate local:TournamentsListPage}" Route="TournamentsListPage" />
         </Tab>
     </FlyoutItem>
 
 
-    <FlyoutItem Title="Settings">
+    <FlyoutItem Title="SETTINGS">
         <FlyoutItem.Icon>
             <FontImageSource FontFamily="FAS"
                              Color="{AppThemeBinding
                                 Dark=white,
                                 Light={StaticResource SystemGray5Dark}}"
-                             Glyph="gear_icon.png"/>
+                             Glyph="{StaticResource gear}"
+                             Size="30"/>
         </FlyoutItem.Icon>
         <Tab Title="General">
              <Tab.Icon>
@@ -140,7 +150,8 @@
                              Color="{AppThemeBinding
                                 Dark=white,
                                 Light={StaticResource SystemGray5Dark}}"
-                             Glyph="three_gears_icon.png"/>
+                             Glyph="{StaticResource gears}"
+                             Size="30"/>
              </Tab.Icon>
              <ShellContent ContentTemplate="{DataTemplate local:GeneralSettingsPage}" Route="GeneralSettingsPage" />
         </Tab>
@@ -150,7 +161,8 @@
                              Color="{AppThemeBinding
                                 Dark=white,
                                 Light={StaticResource SystemGray5Dark}}"
-                             Glyph="light_dark_icon.png"/>
+                             Glyph="{StaticResource light_dark}"
+                             Size="30"/>
              </Tab.Icon>
              <ShellContent ContentTemplate="{DataTemplate local:AppearancePage}" Route="AppearancePage" />
         </Tab>
