@@ -37,7 +37,7 @@
                     StrokeShape="RoundRectangle 100">
 
                 <ImageButton Source="dotnet_bot.png"        
-                     Command="{Binding ProfiloCommand}"/>
+                             Clicked="Profilo"/>
 
             </Border>
                

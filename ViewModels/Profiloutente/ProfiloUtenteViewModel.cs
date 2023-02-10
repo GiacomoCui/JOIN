@@ -10,9 +10,17 @@ public partial class ProfiloUtenteViewModel : ObservableObject
     [ObservableProperty]
     Utente user;
 
-    public ProfiloUtenteViewModel()
+    public ProfiloUtenteViewModel(Utente user)
     {
-        this.user = new Utente("UserX", 0, 0);
+      if (user == null)
+        user = new Utente("UserX", 0, 0);
+        
+        this.user = user;
+    }
+
+    public Utente GetUtente()
+    {
+        return user;
     }
 
     /*Per andare nella pagina delle modifiche*/

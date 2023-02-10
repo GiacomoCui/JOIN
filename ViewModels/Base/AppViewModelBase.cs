@@ -1,4 +1,7 @@
 ﻿
+using JOIN_App.ViewModels.ProfiloUtente;
+using JOIN_App.Views.ProfiloUtente;
+
 namespace JOIN.ViewModels.Base;
 
     public partial class AppViewModelBase : ViewModelBase
@@ -15,6 +18,9 @@ namespace JOIN.ViewModels.Base;
     {
 
     }
+
+    
+    
 
     [RelayCommand]
     private async Task NavigateBack() => 

@@ -6,18 +6,16 @@ using System.Windows.Input;
 
 namespace JOIN_App.ViewModels.ProfiloUtente;
 
-[QueryProperty(nameof(String),nameof(String))]
+[QueryProperty(nameof(Utente),nameof(Utente))]
 public partial class PaginaProfiloModificabileViewModel : ObservableObject
 {
 
     [ObservableProperty]
-    string nome, bio;
-
-    [ObservableProperty]
     Utente user;
 
-    public PaginaProfiloModificabileViewModel()
+    public PaginaProfiloModificabileViewModel(Utente user)
     {
+        this.user = user;
     }
 
     [RelayCommand]

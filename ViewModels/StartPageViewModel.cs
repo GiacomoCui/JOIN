@@ -24,11 +24,7 @@ namespace JOIN.ViewModels;
         await Search();
     }
 
-    [RelayCommand]
-    async Task ModificaProfilo()
-    {
-        await Shell.Current.GoToAsync($"{nameof(PaginaProfiloUtente)}");
-    }
+    
 
     private async Task Search()
     {

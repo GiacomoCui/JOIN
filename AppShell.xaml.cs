@@ -1,4 +1,6 @@
 
+using JOIN_App.Views.ProfiloUtente;
+
 namespace JOIN;
 
 public partial class AppShell : Shell
@@ -7,6 +9,6 @@ public partial class AppShell : Shell
 	{
 		InitializeComponent();
 
-		Routing.RegisterRoute(nameof(StartPage), typeof(StartPage));
+		Routing.RegisterRoute(nameof(PaginaProfiloUtente), typeof(PaginaProfiloUtente));
 	}
 }

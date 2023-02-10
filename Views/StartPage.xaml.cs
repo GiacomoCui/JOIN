@@ -11,11 +11,11 @@ public partial class StartPage : ViewBase<StartPageViewModel>
 	public StartPage()
 	{
 		InitializeComponent();
-
     }
 
-    private void Profilo(object sender, EventArgs e)
-    {
-        Navigation.PushAsync(new PaginaProfiloUtente(new ProfiloUtenteViewModel()));
-    }
+	private async void Profilo(object sender, EventArgs e) {
+
+		await Navigation.PushAsync(new PaginaProfiloUtente(new ProfiloUtenteViewModel(null)));
+	
+	}
 }

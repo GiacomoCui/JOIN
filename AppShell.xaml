@@ -7,7 +7,6 @@
     Shell.FlyoutBehavior="Disabled">
 
     <ShellContent
-        Title="Profilo Utente"
         ContentTemplate="{DataTemplate local:App}"
         Route="MainPage" />
 </Shell>

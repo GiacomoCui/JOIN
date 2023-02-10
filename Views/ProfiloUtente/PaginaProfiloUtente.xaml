@@ -40,13 +40,25 @@
                        Grid.Row="0"
                        FontSize="25"/>
 
-                    <Label Text="{Binding User.tornei}"
-                       Grid.Row="1"
-                       FontSize="25"/>
+                    <Label Grid.Row="1"
+                       FontSize="25">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Tornei "/>
+                                <Span Text="{Binding User.tornei}"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
 
-                    <Label Text="{Binding User.vittorie}"
-                       Grid.Row="2"
-                       FontSize="25"/>
+                    <Label Grid.Row="2"
+                       FontSize="25">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Vittorie "/>
+                                <Span Text="{Binding User.vittorie}"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
                 </Grid>
             </Grid>
 
@@ -57,7 +69,7 @@
                         Grid.Row="2"
                         Grid.Column="1"
                         FontSize="20"
-                        Command="{Binding ModificaProfiloCommand}"/>
+                        Clicked="ModificaProfilo"/>
 
             </Grid>
 
