@@ -1,16 +1,20 @@
-﻿namespace JOIN.ViewModels;
+﻿
 
-    public class StartPageViewModel : AppViewModelBase
+
+
+using Maui.App.Framework.Extensions;
+
+namespace JOIN.ViewModels;
+
+public partial class StartPageViewModel : AppViewModelBase
     {
-    private string nextToken =string.Empty;
-    private string searchTerm = "";
+    private string nextPageToken = string.Empty;
+    private string searchTerm = "Mario";
 
-    //da aggiungere terminato l'inserimento dell' API
+    [ObservableProperty]
+    private ObservableCollection<TournamentResponse> tournamentResponse;
 
-    //[ObservableProperty]
-    //private ObservableCollection<TournamentInstance> TournamentName;
-
-        public StartPageViewModel() : base() 
+        public StartPageViewModel(IApiService appApiService) : base(appApiService) 
         {
         Title = "ILJOIN";
         } 
@@ -24,10 +28,15 @@
     {
         SetDataLoadingIndicator(true);
 
-        LoadingText = "Hold on a sec...";
+        LoadingText = "Hold on a sec, searching for tournament...";
+
+        TournamentResponse = new();
 
         try
         {
+            //Search for tournament
+            await GetTournamentList();
+
             //time for execute the API service
             await Task.Delay(3000);
             DataLoaded = true;
@@ -42,11 +51,28 @@
         {
             IsErrorState = true;
             ErrorImage = $"Something went wrong. If the problem persist, please contact support";
+            ErrorImage = $"error.png";
         }
         finally
         {
             SetDataLoadingIndicator(false);
         }
+    }
+
+    private async Task GetTournamentList()
+    {
+        var TournamentSearchResult = await _appApiService.SearchTournament(searchTerm, nextPageToken);
+
+        nextPageToken = TournamentSearchResult.Links.Next;
+
+        //verificare perché rompe questo codice demmerda
+        TournamentResponse.AddRange(TournamentSearchResult.Tournaments);
+    }
+
+    [RelayCommand]
+    private async void OpenSettingPage()
+    {
+        await PageService.DisplayAlert("Setting", "This feature is not yet implemented", "got it!");
     }
 }
 

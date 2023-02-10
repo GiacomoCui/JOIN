@@ -11,10 +11,6 @@ namespace JOIN.ViewModels.Base;
         {
         _appApiService = appApiService;
         }
-    public AppViewModelBase() : base()
-    {
-
-    }
 
     [RelayCommand]
     private async Task NavigateBack() => 

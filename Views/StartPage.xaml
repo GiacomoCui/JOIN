@@ -17,17 +17,32 @@
     <baseviews:ViewBase.PageIcons>
         <ImageButton
             Style="{StaticResource IconButtonStyle}"
-            Source="iconayoutube.png"/>
+            Source="iconayoutube.png"
+            Command="{Binding OpenSettingPageCommand, Mode=OneWay}"/>
     </baseviews:ViewBase.PageIcons>
 
     <baseviews:ViewBase.PageContent>
 
-        <Label
-            Style="{StaticResource RegularDarkText18}"
-            IsVisible="{Binding DataLoaded, Mode=OneWay}"
-            Text="Hello from UI"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"/>
+        <CollectionView
+            x:Name="lstTournament"
+            Margin="16,4,16,0"
+            ItemsSource="{Binding TournamentResponse, Mode=OneWay}">
+
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout
+                    Orientation="Vertical"
+                    ItemSpacing="12"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.Header>
+                <ContentView>
+                    <Label Text="Search box will appear here"
+                           Style="{StaticResource RegularDarkText18}"/>
+
+                </ContentView>
+            </CollectionView.Header> 
+            
+        </CollectionView>
 
     </baseviews:ViewBase.PageContent>
 

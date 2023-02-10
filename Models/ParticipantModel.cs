@@ -1,7 +1,7 @@
 ﻿using System;
 namespace JOIN.Models
 {
-    public class Participant
+    public class ParticipantModel
     {
 
         /*
@@ -24,7 +24,7 @@ namespace JOIN.Models
          * Questo rende più semplice creare nuovi oggetti Participant passando i valori appropriati per ogni proprietà.
         */
 
-        public Participant(string name, string team, string country, DateTime birthdate, string discordContact, string twitterContact)
+        public ParticipantModel(string name, string team, string country, DateTime birthdate, string discordContact, string twitterContact)
         {
             Name = name;
             Team = team;

@@ -1,9 +1,4 @@
 ﻿
-
-
-
-using JOIN.Models;
-
 namespace JOIN.Services;
 
 public class TournamentService : RestServiceBase, IApiService
@@ -12,17 +7,17 @@ public class TournamentService : RestServiceBase, IApiService
     {
         SetBaseURL(Constants.ApiServiceURL);
         AddHttpHeader("Authorization", "Bearer 0AGymHNi6j0PUyAVSIPicYz0RmWYyMV3F0ObTHdr");
+        AddHttpHeader("Accept", "application/json");
     }
 
-    public async Task<TournamentSearchResult> SearchTournament(string pageNumber)
+    public async Task<TournamentResponse> SearchTournament(string searchTerm, string nextPageToken)
     {
-        var resource = $"https://api.challonge.com/v1/tournaments.json?per_page=25&page={pageNumber}";
+        var resourceUri = $"https://api.challonge.com/v1/tournaments/{searchTerm}.json?per_page=25&page={nextPageToken}";
 
-        var result = await GetAsync<TournamentSearchResult>(resource);
+        var result = await GetAsync<TournamentResponse>(resourceUri, 1);
 
         return result;
     }
 
-    
 }
 

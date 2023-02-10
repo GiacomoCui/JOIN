@@ -6,6 +6,7 @@ using JOIN.Models;
 namespace JOIN.IServices;
     public interface IApiService
     {
-    Task<TournamentSearchResult> SearchTournament(string nextPageToken = "");
-    }
+   
+    Task<TournamentResponse>SearchTournament(string searchTerm, string nextPageToken);
+}
 
