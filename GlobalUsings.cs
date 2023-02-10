@@ -18,5 +18,5 @@ global using Microsoft.Maui.LifecycleEvents;
 global using MonkeyCache.FileStore;
 global using System.Text.Json.Serialization;
 global using JOIN.TournamentResponseModel;
-
+global using Maui.App.Framework.Extensions;
 

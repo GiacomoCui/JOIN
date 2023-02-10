@@ -1,18 +1,15 @@
 ﻿
-
-
-
-using Maui.App.Framework.Extensions;
-
 namespace JOIN.ViewModels;
 
 public partial class StartPageViewModel : AppViewModelBase
     {
     private string nextPageToken = string.Empty;
-    private string searchTerm = "Mario";
+
+    //da usare qunado si implementa la ricerca di un determinato torneo
+    //private string searchTerm = "Mario";
 
     [ObservableProperty]
-    private ObservableCollection<TournamentResponse> tournamentResponse;
+    private ObservableCollection<Tournament> tournamentResponse;
 
         public StartPageViewModel(IApiService appApiService) : base(appApiService) 
         {
@@ -61,12 +58,11 @@ public partial class StartPageViewModel : AppViewModelBase
 
     private async Task GetTournamentList()
     {
-        var TournamentSearchResult = await _appApiService.SearchTournament(searchTerm, nextPageToken);
+        var tournamentSearchResult = await _appApiService.SearchTournaments(nextPageToken);
 
-        nextPageToken = TournamentSearchResult.Links.Next;
+        nextPageToken = tournamentSearchResult.Links.Next;
 
-        //verificare perché rompe questo codice demmerda
-        TournamentResponse.AddRange(TournamentSearchResult.Tournaments);
+        TournamentResponse.AddRange(tournamentSearchResult.Data);
     }
 
     [RelayCommand]

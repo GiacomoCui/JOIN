@@ -7,6 +7,6 @@ namespace JOIN.IServices;
     public interface IApiService
     {
    
-    Task<TournamentResponse>SearchTournament(string searchTerm, string nextPageToken);
+    Task<TournamentResponse>SearchTournaments(string nextPageToken = "1");
 }
 

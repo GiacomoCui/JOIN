@@ -1,4 +1,6 @@
 ﻿
+using System.Net.Http.Headers;
+
 namespace JOIN.Services;
 
 public class TournamentService : RestServiceBase, IApiService
@@ -6,13 +8,15 @@ public class TournamentService : RestServiceBase, IApiService
     public TournamentService(IConnectivity connectivity, IBarrel cacheBarrel) : base(connectivity, cacheBarrel)
     {
         SetBaseURL(Constants.ApiServiceURL);
-        AddHttpHeader("Authorization", "Bearer 0AGymHNi6j0PUyAVSIPicYz0RmWYyMV3F0ObTHdr");
-        AddHttpHeader("Accept", "application/json");
+        AddHttpHeader("Accept","application/json");
+        AddHttpHeader("User-Agent","ILJOIN");
+        AddHttpHeader("Api-Key", $"{Constants.ApiKey}");
+
     }
 
-    public async Task<TournamentResponse> SearchTournament(string searchTerm, string nextPageToken)
+    public async Task<TournamentResponse> SearchTournaments(string nextPageToken = "1")
     {
-        var resourceUri = $"https://api.challonge.com/v1/tournaments/{searchTerm}.json?per_page=25&page={nextPageToken}";
+        var resourceUri = $"https://api.challonge.com/v2/tournaments.json?page=1&per_page=25";
 
         var result = await GetAsync<TournamentResponse>(resourceUri, 1);
 
