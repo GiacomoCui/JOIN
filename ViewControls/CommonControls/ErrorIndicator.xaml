@@ -24,7 +24,6 @@
     <Label
         x:Name="lblErrorText"
         Style="{StaticResource MediumDarkText14}"
-        Text="Error Occoured, Retry!"
         LineBreakMode="WordWrap"
         HorizontalOptions="Center"
         HorizontalTextAlignment="Center"/>

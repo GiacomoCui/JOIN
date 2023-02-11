@@ -31,11 +31,12 @@ public partial class StartPageViewModel : AppViewModelBase
 
         try
         {
-            //Search for tournament
+            //La query genera un errore
+            await Task.Delay(3000);
             await GetTournamentList();
 
             //time for execute the API service
-            await Task.Delay(3000);
+           
             DataLoaded = true;
         }
         catch (InternetConnectionException)
@@ -44,10 +45,10 @@ public partial class StartPageViewModel : AppViewModelBase
             ErrorMessage = $"Slow or no internet connection" + Environment.NewLine + "Please check your internet connection and retry";
             ErrorImage = $"nointernet.png";
         }
-        catch (Exception)
+        catch (Exception ex)
         {
             IsErrorState = true;
-            ErrorImage = $"Something went wrong. If the problem persist, please contact support";
+            ErrorMessage = $"Something went wrong. error code: {ex.Message}";
             ErrorImage = $"error.png";
         }
         finally
@@ -58,6 +59,7 @@ public partial class StartPageViewModel : AppViewModelBase
 
     private async Task GetTournamentList()
     {
+
         var tournamentSearchResult = await _appApiService.SearchTournaments(nextPageToken);
 
         nextPageToken = tournamentSearchResult.Links.Next;

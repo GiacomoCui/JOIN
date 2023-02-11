@@ -1,26 +1,30 @@
-﻿
-using System.Net.Http.Headers;
+﻿using RestSharp;
+
 
 namespace JOIN.Services;
 
 public class TournamentService : RestServiceBase, IApiService
 {
-    public TournamentService(IConnectivity connectivity, IBarrel cacheBarrel) : base(connectivity, cacheBarrel)
-    {
-        SetBaseURL(Constants.ApiServiceURL);
-        AddHttpHeader("Accept","application/json");
-        AddHttpHeader("User-Agent","ILJOIN");
-        AddHttpHeader("Api-Key", $"{Constants.ApiKey}");
 
+    public RestClient client;
+
+    public TournamentService(IConnectivity connectivity, IBarrel cacheBarrel) : base(cacheBarrel, connectivity)
+    {
+        client = new RestClient("https://api.challonge.com/v2/");
     }
 
     public async Task<TournamentResponse> SearchTournaments(string nextPageToken = "1")
     {
-        var resourceUri = $"https://api.challonge.com/v2/tournaments.json?page=1&per_page=25";
+        var request = new RestRequest("tournaments.json?page=1&per_page=10");
+        request.AddHeader("Authorization-Type", "v1");
+        request.AddHeader("Authorization", $"{Constants.ApiKey}");
+        request.AddHeader("Content-Type", "application/vnd.api+json");
+        request.AddHeader("Accept", "application/json");
 
-        var result = await GetAsync<TournamentResponse>(resourceUri, 1);
+        var response = client.Get<TournamentResponse>(request);
 
-        return result;
+        return response;
+
     }
 
 }
