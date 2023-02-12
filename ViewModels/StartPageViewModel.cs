@@ -3,7 +3,7 @@ namespace JOIN.ViewModels;
 
 public partial class StartPageViewModel : AppViewModelBase
     {
-    private string nextPageToken = string.Empty;
+    private int nextPageToken = 1;
 
     //da usare qunado si implementa la ricerca di un determinato torneo
     //private string searchTerm = "Mario";
@@ -13,7 +13,7 @@ public partial class StartPageViewModel : AppViewModelBase
 
         public StartPageViewModel(IApiService appApiService) : base(appApiService) 
         {
-        Title = "ILJOIN";
+        Title = "Home";
         } 
 
     public override async void OnNavigatedTo(object parameters)
@@ -31,11 +31,8 @@ public partial class StartPageViewModel : AppViewModelBase
 
         try
         {
-            //La query genera un errore
-            await Task.Delay(3000);
+            //Chiamata all'API per trovare la prima pagina di tornei, composta da 25 elementi, senza ricerca
             await GetTournamentList();
-
-            //time for execute the API service
            
             DataLoaded = true;
         }
@@ -62,7 +59,7 @@ public partial class StartPageViewModel : AppViewModelBase
 
         var tournamentSearchResult = await _appApiService.SearchTournaments(nextPageToken);
 
-        nextPageToken = tournamentSearchResult.Links.Next;
+        nextPageToken++;
 
         TournamentResponse.AddRange(tournamentSearchResult.Data);
     }

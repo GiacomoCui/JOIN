@@ -3,9 +3,11 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:baseviews="clr-namespace:JOIN.Views.Base"
+    xmlns:models="clr-namespace:JOIN.TournamentResponseModel"
     xmlns:viewmodels="clr-namespace:JOIN.ViewModels"
     x:Class="JOIN.Views.StartPage"
     x:TypeArguments="viewmodels:StartPageViewModel"
+    xmlns:controls="clr-namespace:JOIN.ViewControls"
     x:DataType="viewmodels:StartPageViewModel"
     PageTitle="{Binding Title, Mode=OneWay}"
     PageMode="Menu"
@@ -16,13 +18,17 @@
 
     <baseviews:ViewBase.PageIcons>
         <ImageButton
+            x:Name="SettingButton"
+            Source="three_gears_icon.png"
+            VerticalOptions="Center"
+            HorizontalOptions="Start"
             Style="{StaticResource IconButtonStyle}"
-            Source="iconayoutube.png"
             Command="{Binding OpenSettingPageCommand, Mode=OneWay}"/>
     </baseviews:ViewBase.PageIcons>
 
     <baseviews:ViewBase.PageContent>
-
+        
+        
         <CollectionView
             x:Name="lstTournament"
             Margin="16,4,16,0"
@@ -37,11 +43,22 @@
             <CollectionView.Header>
                 <ContentView>
                     <Label Text="Search box will appear here"
-                           Style="{StaticResource RegularDarkText18}"/>
+                           Style="{StaticResource MediumDarkText14}"/>
 
                 </ContentView>
-            </CollectionView.Header> 
-            
+            </CollectionView.Header>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate
+                    x:DataType="models:Tournament">
+                    <controls:TournamentCell
+                        HorizontalOptions="Fill"
+                        HeightRequest="100">
+                    </controls:TournamentCell>
+                </DataTemplate>
+
+            </CollectionView.ItemTemplate>
+
         </CollectionView>
 
     </baseviews:ViewBase.PageContent>

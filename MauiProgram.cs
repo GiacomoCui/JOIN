@@ -11,9 +11,9 @@ public static class MauiProgram
 			.UseMauiApp<App>()
 			.ConfigureFonts(fonts =>
 			{
-				fonts.AddFont("Roboto-Regular.ttf", "RobotoRegular");
-				fonts.AddFont("Roboto-Semibold.ttf", "RobotoSemiBold");
-				fonts.AddFont("materialdesignicons-webdont.ttf", "IconFont");
+				fonts.AddFont(filename: "Roboto-Regular.ttf", alias:"RobotoRegular");
+				fonts.AddFont(filename: "Roboto-Semibold.ttf", alias:"RobotoSemiBold");
+				fonts.AddFont(filename:"materialdesignicons-webdont.ttf", alias:"MaterialIconFont");
 			}).ConfigureLifecycleEvents(events =>
 			{
 			#if ANDROID

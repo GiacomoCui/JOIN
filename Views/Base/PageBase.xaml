@@ -44,6 +44,7 @@
             VerticalOptions="Center"/>
 
         <Grid
+            BackgroundColor="{StaticResource Tertiary}"
             Grid.Row="1"
             ColumnDefinitions="56,*,56"
             Margin="0.4"
@@ -51,16 +52,7 @@
 
             <ImageButton
                 x:Name="NavigateBackButton"
-                Source="{x:Static helpers:IconFont.ArrowLeft}"
-                VerticalOptions="Center"
-                HorizontalOptions="Start"
-                Style="{StaticResource IconButtonStyle}"
-                Grid.Column="0"
-                Command="{Binding NavigateBackCommand, Mode=OneWay}"/>
-
-            <ImageButton
-                x:Name="HamburgherButton"
-                Source="iconayoutube.png"
+                Source="{x:Static helpers:IconFontHelper.ArrowLeft}"
                 VerticalOptions="Center"
                 HorizontalOptions="Start"
                 Style="{StaticResource IconButtonStyle}"
@@ -68,15 +60,26 @@
                 Command="{Binding NavigateBackCommand, Mode=OneWay}"/>
 
             <!-- Da implementare il menu -->
+            
+            <ImageButton
+                x:Name="HamburgherButton"
+                Source="joinlogo.gif"
+                VerticalOptions="Center"
+                HorizontalOptions="Start"
+                Style="{StaticResource LogoIconButtonStyle}"
+                WidthRequest="70"
+                Grid.Column="0"/>
+
+
 
             <ImageButton
                 x:Name="CloseButton"
-                Source="{x:Static helpers:IconFont.Cross}"
+                Source="{x:Static helpers:IconFontHelper.Cross}"
                 VerticalOptions="Center"
                 HorizontalOptions="Start"
                 Style="{StaticResource IconButtonStyle}"
                 Grid.Column="0"
-                Command="{Binding NavigateBackCommand, Mode=OneWay}"/>
+                Command="{Binding CloseModalCommand, Mode=OneWay}"/>
 
             <Label
                 Grid.Column="1"

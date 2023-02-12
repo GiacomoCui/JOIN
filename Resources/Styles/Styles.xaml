@@ -147,9 +147,7 @@
 
     <!-- Icon Button Style -->
 
-    <Style TargetType="ImageButton" x:Key="IconButtonStyle">
-        <Setter Property="HeightRequest" Value="32"/>
-        <Setter Property="WidthRequest" Value="32"/>
+    <Style TargetType="ImageButton" x:Key="IconButtonStyleBase">
         <Setter Property="Padding" Value="{OnPlatform Android=4, Default=6}"/>
         <Setter Property="BackgroundColor" Value="Transparent"/>
         <Setter Property="Margin" Value="12,3"/>
@@ -171,6 +169,16 @@
                 </VisualStateGroup>
             </VisualStateGroupList>
         </Setter>
+    </Style>
+
+    <Style TargetType="ImageButton" x:Key="LogoIconButtonStyle" BasedOn="{StaticResource IconButtonStyleBase}">
+        <Setter Property="HeightRequest" Value="70"/>
+        <Setter Property="WidthRequest" Value="70"/>
+    </Style>
+
+    <Style TargetType="ImageButton" x:Key="IconButtonStyle" BasedOn="{StaticResource IconButtonStyleBase}">
+        <Setter Property="HeightRequest" Value="40"/>
+        <Setter Property="WidthRequest" Value="40"/>
     </Style>
 
     <!-- Base Label Style -->
