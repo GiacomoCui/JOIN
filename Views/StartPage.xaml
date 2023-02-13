@@ -20,6 +20,7 @@
         <ImageButton
             x:Name="SettingButton"
             Source="three_gears_icon.png"
+            Margin="0,0,15,0"
             VerticalOptions="Center"
             HorizontalOptions="Start"
             Style="{StaticResource IconButtonStyle}"
@@ -27,40 +28,77 @@
     </baseviews:ViewBase.PageIcons>
 
     <baseviews:ViewBase.PageContent>
-        
-        
-        <CollectionView
-            x:Name="lstTournament"
-            Margin="16,4,16,0"
-            ItemsSource="{Binding TournamentResponse, Mode=OneWay}">
 
-            <CollectionView.ItemsLayout>
-                <LinearItemsLayout
-                    Orientation="Vertical"
-                    ItemSpacing="12"/>
-            </CollectionView.ItemsLayout>
 
-            <CollectionView.Header>
-                <ContentView>
-                    <Label Text="Search box will appear here"
-                           Style="{StaticResource MediumDarkText14}"/>
+        <Grid
+            RowDefinitions="50,*,Auto">
 
-                </ContentView>
-            </CollectionView.Header>
+            <Label
+                Grid.Row="0"
+                Margin="0,25,0,0"
+                Text="{Binding WelcomeMessage, Mode=OneWay}"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                Style="{StaticResource MediumDarkText18}">
+            </Label>
+            
+            <Border
+                Grid.Row="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="300"
+                HeightRequest="300"
+                Margin="0,0,0,50"
+                Stroke="{StaticResource Primary}"
+                StrokeThickness="2"
+                StrokeShape="RoundRectangle 175">
+                <Border.Shadow>
+                    <Shadow Brush="{StaticResource Black}"
+                            Offset="1,10"
+                            Opacity=".8"/>
+                </Border.Shadow>
 
-            <CollectionView.ItemTemplate>
-                <DataTemplate
-                    x:DataType="models:Tournament">
-                    <controls:TournamentCell
-                        HorizontalOptions="Fill"
-                        HeightRequest="100">
-                    </controls:TournamentCell>
-                </DataTemplate>
+                <Image
+                    Source="imgprofilo.png"
+                    WidthRequest="300"
+                    HeightRequest="300"
+                    Aspect="Fill"/>
+            </Border>
+            
 
-            </CollectionView.ItemTemplate>
+            <CollectionView
+                Grid.Row="2"
+                x:Name="lstTournament"
+                Margin="16,4,16,0"
+                ItemsSource="{Binding TournamentResponse, Mode=OneWay}">
 
-        </CollectionView>
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout
+                        Orientation="Vertical"
+                        ItemSpacing="12"/>
+                </CollectionView.ItemsLayout>
 
+                <CollectionView.Header>
+                    <ContentView>
+                        <Label Text="Search box will appear here"
+                               Style="{StaticResource MediumDarkText14}"/>
+
+                    </ContentView>
+                </CollectionView.Header>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate
+                        x:DataType="models:Tournament">
+                        <controls:TournamentCell
+                            HorizontalOptions="Fill"
+                            HeightRequest="100">
+                        </controls:TournamentCell>
+                    </DataTemplate>
+
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+        </Grid>
     </baseviews:ViewBase.PageContent>
 
 </baseviews:ViewBase>

@@ -11,10 +11,17 @@ public partial class StartPageViewModel : AppViewModelBase
     [ObservableProperty]
     private ObservableCollection<Tournament> tournamentResponse;
 
+    [ObservableProperty]
+    private string welcomeMessage = string.Empty;
+
         public StartPageViewModel(IApiService appApiService) : base(appApiService) 
         {
         Title = "Home";
-        } 
+
+        //rendere dinamica questa parte del codice. Appena il DB sarà implementato, inserire la presa del nome nella funzione a riga 70
+        WelcomeMessage= TakeUserName();
+        }
+
 
     public override async void OnNavigatedTo(object parameters)
     {
@@ -63,7 +70,15 @@ public partial class StartPageViewModel : AppViewModelBase
 
         TournamentResponse.AddRange(tournamentSearchResult.Data);
     }
+    private string TakeUserName()
+    {
+        string username;
+        username = "KiritoVegetable"; //inserire qui la funzione per prendere il nome dell'utente
+        return $"Ben tornato, {username}";
+    }
 
+
+    //inserire qui il comando per aprire la pagina delle impostazioni
     [RelayCommand]
     private async void OpenSettingPage()
     {
