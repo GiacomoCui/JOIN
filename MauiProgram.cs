@@ -17,7 +17,12 @@ public static class MauiProgram
 				fonts.AddFont("Roboto-Regular.ttf", "RobotoRegular");
 				fonts.AddFont("Roboto-Semibold.ttf", "RobotoSemiBold");
 				fonts.AddFont("materialdesignicons-webdont.ttf", "IconFont");
-			}).ConfigureLifecycleEvents(events =>
+				fonts.AddFont("Brands-Regular-400.otf", "FAB");
+				fonts.AddFont("Free-Regular-400.otf", "FAR");
+				fonts.AddFont("Free-Solid-900.otf", "FAS");
+
+
+            }).ConfigureLifecycleEvents(events =>
 			{
 			#if ANDROID //evento per i dispositivi Android. Se si è su android, rende la barra di stato del telefono trasparente.
 
