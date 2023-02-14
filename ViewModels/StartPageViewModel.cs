@@ -3,7 +3,7 @@
     public class StartPageViewModel : AppViewModelBase
     {
     private string nextToken =string.Empty;
-    private string searchTerm = "";
+    //private string searchTerm = "";
 
     //da aggiungere terminato l'inserimento dell' API
 
