@@ -38,7 +38,7 @@
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#000000" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#000000" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\Images\joinlogo.gif" Color="#000000" BaseSize="128,128" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -62,15 +62,25 @@
 	  <None Remove="Resources\Fonts\Roboto-Regular.ttf" />
 	  <None Remove="Resources\Fonts\Roboto-Thin.ttf" />
 	  <None Remove="Resources\Fonts\Roboto-ThinItalic.ttf" />
-	  <None Remove="Resources\Images\IconaYoutube.png" />
-	  <None Remove="Resources\Fonts\Brands-Regular-400.otf" />
-	  <None Remove="Resources\Fonts\Free-Regular-400.otf" />
-	  <None Remove="Resources\Fonts\Free-Solid-900.otf" />
+	  <None Remove="Resources\Images\callofdutywarzone.png" />
+	  <None Remove="Resources\Images\error.png" />
+	  <None Remove="Resources\Images\imgprofilo.png" />
+	  <None Remove="Resources\Images\joinlogo.gif" />
+	  <None Remove="Resources\Images\youtube_icon.png" />
+	  <None Remove="Resources\Images\icons8_chevron-24.png" />
+	  <None Remove="Resources\Images\icons8_chevron-48.png" />
+	  <None Remove="Resources\Images\icons8_chevron-96.png" />
+	  <None Remove="Resources\Images\three_gears_icon.png" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
 	  <PackageReference Include="MonkeyCache.FileStore" Version="2.0.1" />
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3-beta1" />
+	  <PackageReference Include="NUnit" Version="3.13.3" />
+	  <PackageReference Include="RestSharp" Version="108.0.3" />
+	  <PackageReference Include="SpecFlow" Version="4.0.16-beta" />
+	  <PackageReference Include="SpecFlow.Assist.Dynamic" Version="1.4.2" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -82,6 +92,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="ViewControls\CommonControls\LoadingIndicator.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewControls\TournamentCell.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Base\PageBase.xaml">

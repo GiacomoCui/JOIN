@@ -3,7 +3,7 @@
 
 namespace JOIN.Helpers;
 
-static class IconFont
+static class IconFontHelper
 {
     public const string VectorSquare = "\U000f0001";
     public const string AccessPointNetwork = "\U000f0002";

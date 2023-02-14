@@ -1,20 +1,28 @@
-﻿namespace JOIN.ViewModels;
+﻿
+namespace JOIN.ViewModels;
 
-    public class StartPageViewModel : AppViewModelBase
+public partial class StartPageViewModel : AppViewModelBase
     {
-    private string nextToken =string.Empty;
-    //private string searchTerm = "";
+    private int nextPageToken = 1;
 
-    //da aggiungere terminato l'inserimento dell' API
+    //da usare qunado si implementa la ricerca di un determinato torneo
+    //private string searchTerm = "Mario";
 
-    //[ObservableProperty]
-    //private ObservableCollection<TournamentInstance> TournamentName;
+    [ObservableProperty]
+    private ObservableCollection<Tournament> tournamentResponse;
 
-        public StartPageViewModel() : base() 
+    [ObservableProperty]
+    private string welcomeMessage = string.Empty;
+
+        public StartPageViewModel(IApiService appApiService) : base(appApiService) 
         {
-        Title = "ILJOIN";
-        } 
-    //aspetta che sia terminata una ricerca
+        Title = "Home";
+
+        //rendere dinamica questa parte del codice. Appena il DB sarà implementato, inserire la presa del nome nella funzione a riga 70
+        WelcomeMessage= TakeUserName();
+        }
+
+
     public override async void OnNavigatedTo(object parameters)
     {
         await Search();
@@ -24,12 +32,15 @@
     {
         SetDataLoadingIndicator(true);
 
-        LoadingText = "Hold on a sec...";
+        LoadingText = "Hold on a sec, searching for tournament...";
+
+        TournamentResponse = new();
 
         try
         {
-            //time for execute the API service
-            await Task.Delay(3000);
+            //Chiamata all'API per trovare la prima pagina di tornei, composta da 25 elementi, senza ricerca
+            await GetTournamentList();
+           
             DataLoaded = true;
         }
         catch (InternetConnectionException)
@@ -38,15 +49,40 @@
             ErrorMessage = $"Slow or no internet connection" + Environment.NewLine + "Please check your internet connection and retry";
             ErrorImage = $"nointernet.png";
         }
-        catch (Exception)
+        catch (Exception ex)
         {
             IsErrorState = true;
-            ErrorImage = $"Something went wrong. If the problem persist, please contact support";
+            ErrorMessage = $"Something went wrong. error code: {ex.Message}";
+            ErrorImage = $"error.png";
         }
         finally
         {
             SetDataLoadingIndicator(false);
         }
+    }
+
+    private async Task GetTournamentList()
+    {
+
+        var tournamentSearchResult = await _appApiService.SearchTournaments(nextPageToken);
+
+        nextPageToken++;
+
+        TournamentResponse.AddRange(tournamentSearchResult.Data);
+    }
+    private string TakeUserName()
+    {
+        string username;
+        username = "KiritoVegetable"; //inserire qui la funzione per prendere il nome dell'utente
+        return $"Ben tornato, {username}";
+    }
+
+
+    //inserire qui il comando per aprire la pagina delle impostazioni
+    [RelayCommand]
+    private async void OpenSettingPage()
+    {
+        await PageService.DisplayAlert("Setting", "This feature is not yet implemented", "got it!");
     }
 }
 

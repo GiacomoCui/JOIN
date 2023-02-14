@@ -119,6 +119,7 @@ public partial class PageBase : ContentPage
                 Grid.SetRowSpan(PageContentGrid, 1);
 				break;
 				default: 
+				//non fa niente
 				break;	
         }
 	}

@@ -1,6 +1,4 @@
-﻿using JOIN.Models;
-using Microsoft.Maui.LifecycleEvents;
-using MonkeyCache.FileStore;
+﻿
 
 namespace JOIN;
 
@@ -46,14 +44,14 @@ public static class MauiProgram
 	private static void RegisterAppServices(IServiceCollection services)
 	{
 		//Add Platform specific Dependencies
-		services.AddSingleton<IConnectivity>(Connectivity.Current);
+		services.AddSingleton(Connectivity.Current);
 
 		//Register Cache Barrel
 		Barrel.ApplicationId = Constants.ApplicationId;
-		services.AddSingleton<IBarrel>(Barrel.Current);
+		services.AddSingleton(Barrel.Current);
 
 		//Register API Services
-		//da implementare con la classe API
+		services.AddSingleton<IApiService, TournamentService>();
 
 
 		services.AddSingleton<StartPageViewModel>();
