@@ -13,9 +13,9 @@ public class TournamentService : RestServiceBase, IApiService
         client = new RestClient("https://api.challonge.com/v2/");
     }
 
-    public Task<TournamentResponse> SearchTournaments(int nextPageToken = 1)
+    public Task<TournamentResponse> SearchTournaments(string nextPageToken)
     {
-        var request = new RestRequest("tournaments.json?page={page}&per_page=10");
+        var request = new RestRequest("tournaments.json?page={page}&per_page=25");
         request.AddUrlSegment("page", nextPageToken);
         request.AddHeader("Authorization-Type", "v1");
         request.AddHeader("Authorization", $"{Constants.ApiKey}");

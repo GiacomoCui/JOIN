@@ -3,16 +3,19 @@ namespace JOIN.ViewModels;
 
 public partial class StartPageViewModel : AppViewModelBase
     {
-    private int nextPageToken = 1;
+    private string nextPageToken = "1";
 
     //da usare qunado si implementa la ricerca di un determinato torneo
-    //private string searchTerm = "Mario";
+    private string searchTerm = string.Empty;
 
     [ObservableProperty]
     private ObservableCollection<Tournament> tournamentResponse;
 
     [ObservableProperty]
     private string welcomeMessage = string.Empty;
+
+    [ObservableProperty]
+    private bool isLoadingMore;
 
         public StartPageViewModel(IApiService appApiService) : base(appApiService) 
         {
@@ -66,7 +69,14 @@ public partial class StartPageViewModel : AppViewModelBase
 
         var tournamentSearchResult = await _appApiService.SearchTournaments(nextPageToken);
 
-        nextPageToken++;
+        if (tournamentSearchResult.Data != null)
+        {
+            nextPageToken= tournamentSearchResult.Links.Next;
+        }
+        else
+        {
+            nextPageToken = null;
+        }
 
         TournamentResponse.AddRange(tournamentSearchResult.Data);
     }
@@ -84,5 +94,27 @@ public partial class StartPageViewModel : AppViewModelBase
     {
         await PageService.DisplayAlert("Setting", "This feature is not yet implemented", "got it!");
     }
+
+    [RelayCommand]
+    private async Task LoadMoreTournament()
+    {
+        if(IsLoadingMore || string.IsNullOrEmpty(nextPageToken))
+            return;
+
+        IsLoadingMore = true;
+        await Task.Delay(2000);
+        await GetTournamentList();
+        IsLoadingMore=false;
+    }
+
+    [RelayCommand]
+    private async Task SearchTournament(string searchQuery)
+    {
+        nextPageToken = "1";
+        searchTerm  = searchQuery.Trim();
+
+        await Search();
+    }
+
 }
 
