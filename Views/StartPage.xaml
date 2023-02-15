@@ -31,6 +31,7 @@
 
 
         <Grid
+            x:Name="contentVisualization"
             RowDefinitions="50,*,Auto">
 
             <Label
