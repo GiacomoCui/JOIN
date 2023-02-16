@@ -64,6 +64,7 @@
 	  <None Remove="Resources\Fonts\Roboto-ThinItalic.ttf" />
 	  <None Remove="Resources\Images\callofdutywarzone.png" />
 	  <None Remove="Resources\Images\error.png" />
+	  <None Remove="Resources\Images\icnsearch.png" />
 	  <None Remove="Resources\Images\imgprofilo.png" />
 	  <None Remove="Resources\Images\joinlogo.gif" />
 	  <None Remove="Resources\Images\youtube_icon.png" />

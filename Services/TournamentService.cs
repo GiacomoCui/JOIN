@@ -15,8 +15,9 @@ public class TournamentService : RestServiceBase, IApiService
 
     public Task<TournamentResponse> SearchTournaments(string nextPageToken)
     {
-        var request = new RestRequest("tournaments.json?page={page}&per_page=25");
-        request.AddUrlSegment("page", nextPageToken);
+        var request = new RestRequest("tournaments.json");
+        request.AddParameter("page", nextPageToken);
+        request.AddParameter("per_page", 2);
         request.AddHeader("Authorization-Type", "v1");
         request.AddHeader("Authorization", $"{Constants.ApiKey}");
         request.AddHeader("Content-Type", "application/vnd.api+json");
@@ -25,7 +26,6 @@ public class TournamentService : RestServiceBase, IApiService
         var response = client.Get<TournamentResponse>(request);
 
         return Task.FromResult(response);
-
     }
 
 }

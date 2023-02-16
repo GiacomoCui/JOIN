@@ -3,7 +3,7 @@ namespace JOIN.ViewModels;
 
 public partial class StartPageViewModel : AppViewModelBase
     {
-    private string nextPageToken = "1";
+    private string nextPageToken = string.Empty;
 
     //da usare qunado si implementa la ricerca di un determinato torneo
     private string searchTerm = string.Empty;
@@ -20,9 +20,10 @@ public partial class StartPageViewModel : AppViewModelBase
         public StartPageViewModel(IApiService appApiService) : base(appApiService) 
         {
         Title = "Home";
-
         //rendere dinamica questa parte del codice. Appena il DB sarà implementato, inserire la presa del nome nella funzione a riga 70
         WelcomeMessage= TakeUserName();
+
+        nextPageToken= "1";
         }
 
 
@@ -41,7 +42,6 @@ public partial class StartPageViewModel : AppViewModelBase
 
         try
         {
-            //Chiamata all'API per trovare la prima pagina di tornei, composta da 25 elementi, senza ricerca
             await GetTournamentList();
            
             DataLoaded = true;
@@ -66,21 +66,41 @@ public partial class StartPageViewModel : AppViewModelBase
 
     private async Task GetTournamentList()
     {
-
         var tournamentSearchResult = await _appApiService.SearchTournaments(nextPageToken);
+        //qua se si riesce a trasformare il token in intero, aggiungere 1, e poi farlo tornare stringa sarebbe meglio. Per 
 
         if (tournamentSearchResult.Data != null)
         {
-            nextPageToken= tournamentSearchResult.Links.Next;
+            if(nextPageToken == "1")
+            {
+                nextPageToken= "2";
+            }else if(nextPageToken == "2")
+            {
+                nextPageToken= "3";
+            }
+            else if (nextPageToken == "3")
+            {
+                nextPageToken = "4";
+            }
+            else
+            {
+                nextPageToken = null;
+            }
         }
         else
         {
             nextPageToken = null;
         }
-
-        TournamentResponse.AddRange(tournamentSearchResult.Data);
+        if (!string.IsNullOrEmpty(searchTerm))
+        {
+            TournamentResponse.AddRange(tournamentSearchResult.Data.Where(t => t.Attributes.Name == searchTerm));
+        }
+            TournamentResponse.AddRange(tournamentSearchResult.Data);
+        
+        
     }
-    private string TakeUserName()
+
+    private static string TakeUserName()
     {
         string username;
         username = "KiritoVegetable"; //inserire qui la funzione per prendere il nome dell'utente
@@ -96,25 +116,25 @@ public partial class StartPageViewModel : AppViewModelBase
     }
 
     [RelayCommand]
-    private async Task LoadMoreTournament()
-    {
-        if(IsLoadingMore || string.IsNullOrEmpty(nextPageToken))
-            return;
-
-        IsLoadingMore = true;
-        await Task.Delay(2000);
-        await GetTournamentList();
-        IsLoadingMore=false;
-    }
-
-    [RelayCommand]
     private async Task SearchTournament(string searchQuery)
     {
-        nextPageToken = "1";
-        searchTerm  = searchQuery.Trim();
+        searchTerm = searchQuery.Trim();
 
         await Search();
     }
+
+
+    [RelayCommand]
+    private async Task LoadMoreTournament()
+    {
+        if (IsLoadingMore || string.IsNullOrEmpty(nextPageToken))
+            return;
+
+        IsLoadingMore = true;
+        await GetTournamentList();
+        IsLoadingMore = false;
+    }
+
 
 }
 
