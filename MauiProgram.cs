@@ -47,8 +47,9 @@ public static class MauiProgram
 		//Register API Services
 		services.AddSingleton<IApiService, TournamentService>();
 
-
+		//Register View Model
 		services.AddSingleton<StartPageViewModel>();
+		services.AddTransient<TournamentDetailsPageViewModel>();
 		
 	}
 

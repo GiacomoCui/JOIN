@@ -1,4 +1,4 @@
-﻿// Root myDeserializedClass = JsonSerializer.Deserialize<Root>(myJsonResponse);
+﻿
 namespace JOIN.TournamentResponseModel;
 
 

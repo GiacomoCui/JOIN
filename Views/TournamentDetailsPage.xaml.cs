@@ -1,8 +1,8 @@
 namespace JOIN.Views;
 
-public partial class TournamentDetailsPage : ContentPage
+public partial class TournamentDetailsPage : ViewBase<TournamentDetailsPageViewModel>
 {
-	public TournamentDetailsPage(string tournamnetId)
+	public TournamentDetailsPage(object initParam): base(initParam)
 	{
 		InitializeComponent();
 	}

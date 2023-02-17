@@ -9,9 +9,9 @@
     x:TypeArguments="viewmodels:StartPageViewModel"
     xmlns:controls="clr-namespace:JOIN.ViewControls"
     x:DataType="viewmodels:StartPageViewModel"
-    PageTitle="{Binding Title, Mode=OneWay}"
     PageMode="Menu"
     ContentDisplayMode="NavigationBar"
+    PageTitle="{Binding Title, Mode=OneWay}"
     x:Name="RootPage">
 
 
