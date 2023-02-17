@@ -97,7 +97,6 @@ public partial class StartPageViewModel : AppViewModelBase
         }
             TournamentResponse.AddRange(tournamentSearchResult.Data);
         
-        
     }
 
     private static string TakeUserName()
@@ -136,7 +135,7 @@ public partial class StartPageViewModel : AppViewModelBase
     }
 
     [RelayCommand]
-    private async Task NavigateToVideoDetailsPage(string videoId) 
+    private async Task NavigateToVideoDetailsPage(Attributes videoId) 
     {
         await NavigationService.PushAsync(new TournamentDetailsPage(videoId));
     }

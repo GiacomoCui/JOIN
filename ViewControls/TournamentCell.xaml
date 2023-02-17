@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:models="clr-namespace:JOIN.TournamentResponseModel"
+    x:DataType="models:Tournament"
     x:Class="JOIN.ViewControls.TournamentCell"
     x:Name="TournamnetCellRoot">
 
@@ -24,7 +25,7 @@
 
             <TapGestureRecognizer
                 Command="{Binding Path=ParentContext.NavigateToVideoDetailsPageCommand, Source={x:Reference TournamnetCellRoot}, Mode=OneWay}"
-                CommandParameter="{Binding Id}"
+                CommandParameter="{Binding Attributes}"
                 />
 
 

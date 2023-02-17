@@ -6,7 +6,7 @@ namespace JOIN.ViewModels;
 public partial class TournamentDetailsPageViewModel : AppViewModelBase
 {
     [ObservableProperty]
-    private Tournament theTournament;
+    private Attributes theTournament;
 
     public event EventHandler DownloadCompleted;
 
@@ -17,17 +17,17 @@ public partial class TournamentDetailsPageViewModel : AppViewModelBase
 
     public override async void OnNavigatedTo(object parameters)
     {
-        var torunamentID = (string)parameters;
+        var torunamentID = (Attributes)parameters;
 
         SetDataLoadingIndicator(true);
 
         LoadingText= "Hold on while we are loading tournament...";
-
+        await Task.Delay(1000);
         TheTournament = new();
 
         try
         {
-            TheTournament = await _appApiService.SearchSingleTournament(torunamentID);
+            TheTournament = torunamentID;
 
             DataLoaded = true;
 

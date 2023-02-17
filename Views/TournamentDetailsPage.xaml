@@ -16,7 +16,60 @@
 
     <baseviews:ViewBase.PageContent>
 
-        <Label Text="Hello World!" Style="{StaticResource MediumDarkText14}"/>
+        <Grid
+            RowDefinitions="160,Auto,Auto,Auto,Auto,*,56"
+            RowSpacing="12"
+            Margin="16,0"
+            IsVisible="{Binding DataLoaded, Mode=OneWay}"
+            IgnoreSafeArea="True">
+
+            <Frame
+                HasShadow="True"
+                CornerRadius="8"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"
+                IsClippedToBounds="True"
+                Padding="0"
+                Grid.Row="0"
+                x:Name="HeaderView">
+
+                <Grid
+                    IsClippedToBounds="True"
+                    VerticalOptions="Fill"
+                    HorizontalOptions="Fill">
+                    
+                    <!-- Poster Image -->
+                    <Image
+                        VerticalOptions="Fill"
+                        HorizontalOptions="Fill"
+                        Aspect="AspectFill"
+                        Margin="0"
+                        Source="callofdutywarzone.png">
+                    </Image>
+                    
+                </Grid>
+                
+            </Frame>
+
+            <VerticalStackLayout
+                x:Name="TournamentTitleStack"
+                Grid.Row="1"
+                HorizontalOptions="Fill"
+                Spacing="2">
+
+                <Label
+                    Style="{StaticResource MediumDarkText20}"
+                    Text="{Binding TheTournament.Name}"/>
+
+                <Label
+                    Style="{StaticResource RegularDarkText14}"
+                    Text="Subtitle will come here, like state or start date"/>
+
+            </VerticalStackLayout>
+            
+            
+            
+        </Grid>
 
     </baseviews:ViewBase.PageContent>
 </baseviews:ViewBase>

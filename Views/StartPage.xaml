@@ -29,14 +29,13 @@
 
     <baseviews:ViewBase.PageContent>
 
-
         <Grid
             x:Name="contentVisualization"
-            RowDefinitions="50,Auto,*">
+            RowDefinitions="100,Auto,*">
 
             <Label
                 Grid.Row="0"
-                Margin="0,25,0,0"
+                Margin="0,0,0,40"
                 Text="{Binding WelcomeMessage, Mode=OneWay}"
                 HorizontalOptions="Center"
                 VerticalOptions="End"

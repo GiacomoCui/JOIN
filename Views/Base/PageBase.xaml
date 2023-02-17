@@ -52,7 +52,7 @@
 
             <ImageButton
                 x:Name="NavigateBackButton"
-                Source="{x:Static helpers:IconFontHelper.ArrowLeft}"
+                Source="leftarrow.png"
                 VerticalOptions="Center"
                 HorizontalOptions="Start"
                 Style="{StaticResource IconButtonStyle}"
