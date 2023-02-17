@@ -67,7 +67,7 @@ public partial class StartPageViewModel : AppViewModelBase
     private async Task GetTournamentList()
     {
         var tournamentSearchResult = await _appApiService.SearchTournaments(nextPageToken);
-        //qua se si riesce a trasformare il token in intero, aggiungere 1, e poi farlo tornare stringa sarebbe meglio. Per 
+        //qua se si riesce a trasformare il token in intero, aggiungere 1, e poi farlo tornare stringa sarebbe meglio. Per ora si tiene questo
 
         if (tournamentSearchResult.Data != null)
         {
@@ -135,6 +135,10 @@ public partial class StartPageViewModel : AppViewModelBase
         IsLoadingMore = false;
     }
 
-
+    [RelayCommand]
+    private async Task NavigateToVideoDetailsPage(string videoId) 
+    {
+        await NavigationService.PushAsync(new TournamentDetailsPage(videoId));
+    }
 }
 

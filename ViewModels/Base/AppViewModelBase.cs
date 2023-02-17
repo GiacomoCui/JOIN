@@ -13,11 +13,14 @@ namespace JOIN.ViewModels.Base;
         }
 
     [RelayCommand]
-    private async Task NavigateBack() => 
+    private async Task NavigateBack() {
         await NavigationService.PopAsync();
+    }
 
     [RelayCommand]
-    private async Task CloseModal() =>
-        await NavigationService.PopModalAsync(); 
+    private async Task CloseModal()
+    {
+        await NavigationService.PopModalAsync();
     }
+}
 
