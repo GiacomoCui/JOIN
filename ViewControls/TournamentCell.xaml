@@ -12,7 +12,16 @@
     <Border
         StrokeShape="RoundRectangle 12">
 
-        <Border.Background>
+        <Border.Shadow>
+            <Shadow
+                Brush="{StaticResource Secondary}"
+                Offset="4,2"
+                Opacity=".4"
+                Radius="11"/>
+
+        </Border.Shadow>
+
+    <Border.Background>
             <LinearGradientBrush EndPoint="1,0">
                 <GradientStop Color="{StaticResource Secondary}"
                           Offset="0.1" />
@@ -74,7 +83,10 @@
                     Aspect="AspectFit"
                     VerticalOptions="Center"/>
 
+
+
             </Grid>
+
         </Grid>
     </Border>
 </ContentView>

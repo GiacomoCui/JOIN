@@ -81,6 +81,9 @@
                         ItemSpacing="12"/>
                 </CollectionView.ItemsLayout>
 
+                
+                <!-- Barra di ricerca da sostituire con dei pulsanti per navigare tra i tornei -->
+                
                 <CollectionView.Header>
                     <ContentView>
 
@@ -138,12 +141,14 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate
                         x:DataType="models:Tournament">
-                        
+
                         <controls:TournamentCell
                             ParentContext="{Binding BindingContext, Source={x:Reference RootPage}}"
                             HorizontalOptions="Fill"
+                            Padding="3"
                             HeightRequest="100">
                         </controls:TournamentCell>
+
                     </DataTemplate>
 
                 </CollectionView.ItemTemplate>

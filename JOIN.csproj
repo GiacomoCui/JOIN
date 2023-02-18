@@ -12,7 +12,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>ILJOIN</ApplicationTitle>
+		<ApplicationTitle>JOIN</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.iljoin</ApplicationId>
@@ -32,11 +32,9 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#000000" />
-
+		<MauiIcon Include="Resources\AppIcon\logoimagescreen.svg" Color="#97CECC"/>
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Images\joinlogo.gif" Color="#000000" BaseSize="128,128" />
-
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" />
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
 		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
