@@ -1,4 +1,6 @@
 ﻿
+using Maui.App.Framework.Extensions;
+
 namespace JOIN.ViewModels;
 
 public partial class StartPageViewModel : AppViewModelBase
@@ -94,6 +96,9 @@ public partial class StartPageViewModel : AppViewModelBase
 
         tournamentSearchResult.Data.ForEach(x => { x.Attributes.RelationshipsCopy = x.Relationships; });
 
+        ImpostaOrganizzatore(tournamentSearchResult);
+
+
         if (!string.IsNullOrEmpty(searchTerm))
         {
             TournamentResponseVariable.AddRange(tournamentSearchResult.Data.Where(t => t.Attributes.Name == searchTerm));
@@ -101,6 +106,25 @@ public partial class StartPageViewModel : AppViewModelBase
             TournamentResponseVariable.AddRange(tournamentSearchResult.Data);
         
     }
+
+    private static void ImpostaOrganizzatore(TournamentResponse arg)
+    {
+        arg.Data.ForEach(x => { 
+            arg.Included.ForEach(y =>
+            { 
+                if(y.Type == "user")
+                {
+                    if(y.Id == x.Relationships.Organizer.Data.Id)
+                    {
+                        x.Attributes.OrganizerUsername = y.Attributes.OrganizerUsername;
+                        x.Attributes.OrganizerImageUrl = y.Attributes.OrganizerImageUrl;
+                    }
+                }             
+            });
+            
+        });
+    }
+
 
     private static string TakeUserName()
     {
@@ -143,4 +167,3 @@ public partial class StartPageViewModel : AppViewModelBase
         await NavigationService.PushAsync(new TournamentDetailsPage(videoId));
     }
 }
-

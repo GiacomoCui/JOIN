@@ -88,8 +88,43 @@
                         Grid.Column="3" />
                 </Grid>
             </VerticalStackLayout>
-            
-            
+
+            <FlexLayout
+                x:Name="TournamentIcons"
+                Grid.Row="2"
+                HorizontalOptions="Fill"
+                Opacity="0"
+                Direction="Row"
+                JustifyContent="SpaceBetween"
+                AlignContent="Stretch"
+                Margin="0,8">
+
+                <HorizontalStackLayout
+                    Spacing="6"
+                    VerticalOptions="Center">
+
+                    <Label
+                        Text="Type"
+                        Style="{StaticResource RegularDarkText12}"/>
+
+                    <Label
+                        Style="{StaticResource RegularDarkText14}"
+                        Text="{Binding TheTournament.TournamentType, Mode=OneWay}"/>
+
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout
+                    Spacing="6"
+                    VerticalOptions="Center">
+
+                    <Image
+                        Source="{Binding }"/>
+
+                </HorizontalStackLayout>
+                
+                
+                
+            </FlexLayout>
             
         </Grid>
 

@@ -10,6 +10,9 @@ public class TournamentResponse
     [JsonPropertyName("meta")]
     public Meta Meta { get; set; }
 
+    [JsonPropertyName("included")]
+    public List<Included> Included { get; set; }
+
     [JsonPropertyName("links")]
     public Links Links { get; set; }
 }
@@ -88,6 +91,18 @@ public class Attributes
     [JsonPropertyName("timestamps")]
     public Timestamps Timestamps { get; set; }
 
+    [JsonPropertyName("aliases")]
+    public List<string> Aliases { get; set; }
+
+    [JsonPropertyName("verified")]
+    public bool Verified { get; set; }
+
+    [JsonPropertyName("username")]
+    public string OrganizerUsername { get; set; }
+
+    [JsonPropertyName("imageUrl")]
+    public string OrganizerImageUrl { get; set; }
+
     public Relationships RelationshipsCopy { get; set; }
 
 }
@@ -116,10 +131,22 @@ public class Matches
     public Links Links { get; set; }
 }
 
+public class Organizer
+{
+    [JsonPropertyName("data")]
+    public Tournament Data { get; set; }
+}
+
 public class Meta
 {
     [JsonPropertyName("count")]
     public int? Count { get; set; }
+}
+
+public class Community
+{
+    [JsonPropertyName("data")]
+    public object data { get; set; }
 }
 
 public class Participants
@@ -128,16 +155,53 @@ public class Participants
     public Links Links { get; set; }
 }
 
+public class Included
+{
+    [JsonPropertyName("id")]
+    public string Id { get; set; }
+
+    [JsonPropertyName("type")]
+    public string Type { get; set; }
+
+    [JsonPropertyName("attributes")]
+    public Attributes Attributes { get; set; }
+
+    [JsonPropertyName("relationships")]
+    public Relationships Relationships { get; set; }
+}
+
 public class Relationships
 {
+    [JsonPropertyName("organizer")]
+    public Organizer Organizer { get; set; }
+
+    [JsonPropertyName("community")]
+    public Community Community { get; set; }
+
     [JsonPropertyName("matches")]
     public Matches Matches { get; set; }
 
     [JsonPropertyName("participants")]
     public Participants Participants { get; set; }
+
+    [JsonPropertyName("game")]
+    public Game Game { get; set; }
+
+    [JsonPropertyName("competitions")]
+    public Competitions Competitions { get; set; }
 }
 
+public class Competitions
+{
+    [JsonPropertyName("links")]
+    public Links Links { get; set; }
+}
 
+public class Game
+{
+    [JsonPropertyName("data")]
+    public Tournament Data { get; set; }
+}
 
 public class Timestamps
 {
