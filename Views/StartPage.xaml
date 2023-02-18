@@ -70,7 +70,7 @@
                 Grid.Row="2"
                 x:Name="lstTournament"
                 Margin="16,4,16,0"
-                ItemsSource="{Binding TournamentResponse, Mode=OneWay}"
+                ItemsSource="{Binding TournamentResponseVariable, Mode=OneWay}"
                 RemainingItemsThreshold="1"
                 RemainingItemsThresholdReachedCommand="{Binding LoadMoreTournamentCommand, Mode=OneWay}"
                 >
@@ -143,7 +143,6 @@
                         x:DataType="models:Tournament">
 
                         <controls:TournamentCell
-                            ParentContext="{Binding BindingContext, Source={x:Reference RootPage}}"
                             HorizontalOptions="Fill"
                             Padding="3"
                             HeightRequest="100">

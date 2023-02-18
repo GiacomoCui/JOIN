@@ -31,6 +31,7 @@
                 IsClippedToBounds="True"
                 Padding="0"
                 Grid.Row="0"
+                Opacity="0"
                 x:Name="HeaderView">
 
                 <Grid
@@ -55,7 +56,8 @@
                 x:Name="TournamentTitleStack"
                 Grid.Row="1"
                 HorizontalOptions="Fill"
-                Spacing="2">
+                Spacing="2"
+                Opacity="0">
 
                 <Label
                     Style="{StaticResource MediumDarkText20}"

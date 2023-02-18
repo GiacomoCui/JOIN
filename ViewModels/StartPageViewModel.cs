@@ -9,7 +9,7 @@ public partial class StartPageViewModel : AppViewModelBase
     private string searchTerm = string.Empty;
 
     [ObservableProperty]
-    private ObservableCollection<Tournament> tournamentResponse;
+    private ObservableCollection<Tournament> tournamentResponseVariable;
 
     [ObservableProperty]
     private string welcomeMessage = string.Empty;
@@ -38,7 +38,7 @@ public partial class StartPageViewModel : AppViewModelBase
 
         LoadingText = "Hold on a sec, searching for tournament...";
 
-        TournamentResponse = new();
+        TournamentResponseVariable = new();
 
         try
         {
@@ -96,9 +96,9 @@ public partial class StartPageViewModel : AppViewModelBase
 
         if (!string.IsNullOrEmpty(searchTerm))
         {
-            TournamentResponse.AddRange(tournamentSearchResult.Data.Where(t => t.Attributes.Name == searchTerm));
+            TournamentResponseVariable.AddRange(tournamentSearchResult.Data.Where(t => t.Attributes.Name == searchTerm));
         }
-            TournamentResponse.AddRange(tournamentSearchResult.Data);
+            TournamentResponseVariable.AddRange(tournamentSearchResult.Data);
         
     }
 

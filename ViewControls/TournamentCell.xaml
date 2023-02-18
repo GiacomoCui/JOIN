@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:models="clr-namespace:JOIN.TournamentResponseModel"
     x:DataType="models:Tournament"
+    xmlns:viewmodels="clr-namespace:JOIN.ViewModels"
     x:Class="JOIN.ViewControls.TournamentCell"
     x:Name="TournamnetCellRoot">
 
@@ -33,7 +34,7 @@
         <Border.GestureRecognizers>
 
             <TapGestureRecognizer
-                Command="{Binding Path=ParentContext.NavigateToVideoDetailsPageCommand, Source={x:Reference TournamnetCellRoot}, Mode=OneWay}"
+                Command="{Binding Path=NavigateToVideoDetailsPageCommand, Source={RelativeSource AncestorType={x:Type viewmodels:StartPageViewModel}}, Mode=OneWay}"
                 CommandParameter="{Binding Attributes}"
                 />
 
