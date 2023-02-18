@@ -1,6 +1,4 @@
 ﻿
-using Maui.App.Framework.Extensions;
-
 namespace JOIN.ViewModels;
 
 public partial class StartPageViewModel : AppViewModelBase
@@ -95,6 +93,8 @@ public partial class StartPageViewModel : AppViewModelBase
         }
 
         tournamentSearchResult.Data.ForEach(x => { x.Attributes.RelationshipsCopy = x.Relationships; });
+
+        tournamentSearchResult.Data.ForEach(x => { if (x.Attributes.SignupCap is null) x.Attributes.SignupCap = "Infinito"; });
 
         ImpostaOrganizzatore(tournamentSearchResult);
 

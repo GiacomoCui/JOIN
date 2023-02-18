@@ -34,6 +34,8 @@ public partial class TournamentDetailsPage : ViewBase<TournamentDetailsPageViewM
 
         parentAnimation.Add(0.4, 0.7, new Animation(v => TournamentTitleStack.Opacity = v,0,1, Easing.CubicIn));
 
+        parentAnimation.Add(0.5, 0.7, new Animation (v=> TournamentIcon.Opacity = v,0,1, Easing.CubicIn));
+
         parentAnimation.Commit(this, "TransitionAnimation", 16, Constants.LongDuration, null,
         (v,c) =>
         {

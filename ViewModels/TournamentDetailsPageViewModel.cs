@@ -51,4 +51,18 @@ public partial class TournamentDetailsPageViewModel : AppViewModelBase
             SetDataLoadingIndicator(false);
         }
     }
+
+    [RelayCommand]
+    private async Task ShareTournament()
+    {
+        var textToShare = $"Hey, ho trovate questo torneo. Dagli un occhio: {TheTournament.FullChallongeUrl}";
+
+        await Share.RequestAsync(new ShareTextRequest
+        {
+            Text = textToShare,
+            Title = TheTournament.Name
+        });
+    }
+
+
 }

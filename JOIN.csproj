@@ -32,7 +32,7 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\logoimagescreen.svg" Color="#97CECC"/>
+		<MauiIcon Include="Resources\AppIcon\logoimagescreen.svg" Color="#97CECC" />
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" />
 		<!-- Images -->
@@ -66,6 +66,7 @@
 	  <None Remove="Resources\Images\imgprofilo.png" />
 	  <None Remove="Resources\Images\joinlogo.gif" />
 	  <None Remove="Resources\Images\leftarrow.png" />
+	  <None Remove="Resources\Images\shareicon.png" />
 	  <None Remove="Resources\Images\youtube_icon.png" />
 	  <None Remove="Resources\Images\icons8_chevron-24.png" />
 	  <None Remove="Resources\Images\icons8_chevron-48.png" />

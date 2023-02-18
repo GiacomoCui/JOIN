@@ -64,13 +64,12 @@
                     Text="{Binding TheTournament.Name}"/>
 
                 <Grid
-                    ColumnDefinitions="Auto,Auto,Auto,Auto"
+                    ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto"
                     ColumnSpacing="5">
                     <Label
                         Style="{StaticResource RegularDarkText14}"
                         Text="Inizio: "
                         Grid.Column="0" />
-
 
                     <Label
                         Style="{StaticResource RegularDarkText14}"
@@ -86,45 +85,116 @@
                         Style="{StaticResource RegularDarkText14}"
                         Text="{Binding TheTournament.RelationshipsCopy.Participants.Links.Meta.Count}"
                         Grid.Column="3" />
-                </Grid>
-            </VerticalStackLayout>
-
-            <FlexLayout
-                x:Name="TournamentIcons"
-                Grid.Row="2"
-                HorizontalOptions="Fill"
-                Opacity="0"
-                Direction="Row"
-                JustifyContent="SpaceBetween"
-                AlignContent="Stretch"
-                Margin="0,8">
-
-                <HorizontalStackLayout
-                    Spacing="6"
-                    VerticalOptions="Center">
-
-                    <Label
-                        Text="Type"
-                        Style="{StaticResource RegularDarkText12}"/>
 
                     <Label
                         Style="{StaticResource RegularDarkText14}"
-                        Text="{Binding TheTournament.TournamentType, Mode=OneWay}"/>
+                        Text="( max "
+                        Grid.Column="4" />
 
-                </HorizontalStackLayout>
+                    <Label
+                        Style="{StaticResource RegularDarkText14}"
+                        Text="{Binding TheTournament.SignupCap}"
+                        Grid.Column="5" />
 
-                <HorizontalStackLayout
+                    <Label
+                        Style="{StaticResource RegularDarkText14}"
+                        Text=")"
+                        Grid.Column="6" />
+                </Grid>
+            </VerticalStackLayout>
+
+            <Grid
+                x:Name="TournamentIcon"
+                Grid.Row="2"
+                ColumnDefinitions="*,*,*"
+                HorizontalOptions="Fill"
+                Opacity="0"
+                Margin="0,8">
+
+                <VerticalStackLayout
+                    Grid.Row="0"
                     Spacing="6"
                     VerticalOptions="Center">
 
-                    <Image
-                        Source="{Binding }"/>
+                    <Label
+                        Style="{StaticResource RegularDarkText14}"
+                        Text="Tipo"
+                        HorizontalOptions="Center"/>
 
-                </HorizontalStackLayout>
+                    <Label
+                        Style="{StaticResource RegularDarkText14}"
+                        Text="{Binding TheTournament.TournamentType}"
+                        HorizontalOptions="Center"/>
+
+                </VerticalStackLayout>
+
+                <VerticalStackLayout
+                    Grid.Column="1"
+                    Spacing="6"
+                    VerticalOptions="Center">
+
+                    <Label
+                        Text="Organizzatore"
+                        Style="{StaticResource RegularDarkText14}"
+                        HorizontalOptions="Center"/>
+
+                    <Label
+                        Text="{Binding TheTournament.OrganizerUsername}"
+                        Style="{StaticResource RegularDarkText14}"
+                        HorizontalOptions="Center"/>
+
+                </VerticalStackLayout>
+
+                <VerticalStackLayout
+                    Grid.Column="2"
+                    Spacing="6"
+                    VerticalOptions="Center">
+
+                    <VerticalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ShareTournamentCommand, Mode=OneWay}"/>
+                    </VerticalStackLayout.GestureRecognizers>
+
+                    <Label
+                        Style="{StaticResource RegularDarkText14}"
+                        HorizontalOptions="Center"
+                        Text="Condividi Torneo"/>
+
+                    <Image
+                        Source="shareicon.png"
+                        WidthRequest="16"
+                        HeightRequest="16"/>
+                    
+                    
+
+                </VerticalStackLayout>
                 
                 
                 
-            </FlexLayout>
+            </Grid>
+
+            <Border
+                Grid.Row="3"
+                BackgroundColor="White"
+                Margin="16"
+                StrokeShape="RoundRectangle 12">
+
+                <Border.Shadow>
+                    <Shadow 
+                        Brush="{StaticResource Gray200Brush}"
+                        Offset="3,3"
+                        Opacity=".6"/>
+                </Border.Shadow>
+
+                <Label
+                    Grid.Row="3"
+                    HorizontalOptions="Fill"
+                    Margin="10"
+                    Style="{StaticResource MediumDarkText14}"
+                    Text="{Binding TheTournament.Description}"
+                    LineBreakMode="WordWrap"/>
+
+
+            </Border>
             
         </Grid>
 
