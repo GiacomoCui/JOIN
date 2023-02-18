@@ -88,6 +88,8 @@ public class Attributes
     [JsonPropertyName("timestamps")]
     public Timestamps Timestamps { get; set; }
 
+    public Relationships RelationshipsCopy { get; set; }
+
 }
 
 public class Links

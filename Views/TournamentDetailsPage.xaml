@@ -62,8 +62,8 @@
                     Text="{Binding TheTournament.Name}"/>
 
                 <Grid
-                    ColumnDefinitions="Auto,Auto"
-                    ColumnDefinitions="5">
+                    ColumnDefinitions="Auto,Auto,Auto,Auto"
+                    ColumnSpacing="5">
                     <Label
                         Style="{StaticResource RegularDarkText14}"
                         Text="Inizio: "
@@ -74,8 +74,16 @@
                         Style="{StaticResource RegularDarkText14}"
                         Text="{Binding TheTournament.Timestamps.StartsAt}"
                         Grid.Column="1"/>
-                    
-                    
+
+                    <Label
+                        Style="{StaticResource RegularDarkText14}"
+                        Text="| Iscrizioni: "
+                        Grid.Column="2" />
+
+                    <Label
+                        Style="{StaticResource RegularDarkText14}"
+                        Text="{Binding TheTournament.RelationshipsCopy.Participants.Links.Meta.Count}"
+                        Grid.Column="3" />
                 </Grid>
             </VerticalStackLayout>
             

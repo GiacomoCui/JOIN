@@ -91,6 +91,9 @@ public partial class StartPageViewModel : AppViewModelBase
         {
             nextPageToken = null;
         }
+
+        tournamentSearchResult.Data.ForEach(x => { x.Attributes.RelationshipsCopy = x.Relationships; });
+
         if (!string.IsNullOrEmpty(searchTerm))
         {
             TournamentResponse.AddRange(tournamentSearchResult.Data.Where(t => t.Attributes.Name == searchTerm));
