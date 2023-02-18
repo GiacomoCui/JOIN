@@ -61,10 +61,22 @@
                     Style="{StaticResource MediumDarkText20}"
                     Text="{Binding TheTournament.Name}"/>
 
-                <Label
-                    Style="{StaticResource RegularDarkText14}"
-                    Text="Subtitle will come here, like state or start date"/>
+                <Grid
+                    ColumnDefinitions="Auto,Auto"
+                    ColumnDefinitions="5">
+                    <Label
+                        Style="{StaticResource RegularDarkText14}"
+                        Text="Inizio: "
+                        Grid.Column="0" />
 
+
+                    <Label
+                        Style="{StaticResource RegularDarkText14}"
+                        Text="{Binding TheTournament.Timestamps.StartsAt}"
+                        Grid.Column="1"/>
+                    
+                    
+                </Grid>
             </VerticalStackLayout>
             
             

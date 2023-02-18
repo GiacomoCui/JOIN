@@ -87,6 +87,7 @@ public class Attributes
 
     [JsonPropertyName("timestamps")]
     public Timestamps Timestamps { get; set; }
+
 }
 
 public class Links
