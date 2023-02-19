@@ -1,5 +1,3 @@
-using Dynamitey;
-
 namespace JOIN.Views;
 
 public partial class TournamentDetailsPage : ViewBase<TournamentDetailsPageViewModel>

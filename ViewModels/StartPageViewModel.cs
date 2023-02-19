@@ -1,12 +1,8 @@
-﻿
-namespace JOIN.ViewModels;
+﻿namespace JOIN.ViewModels;
 
 public partial class StartPageViewModel : AppViewModelBase
     {
     private string nextPageToken = string.Empty;
-
-    //da usare qunado si implementa la ricerca di un determinato torneo
-    private string searchTerm = string.Empty;
 
     [ObservableProperty]
     private ObservableCollection<Tournament> tournamentResponseVariable;
@@ -98,11 +94,6 @@ public partial class StartPageViewModel : AppViewModelBase
 
         ImpostaOrganizzatore(tournamentSearchResult);
 
-
-        if (!string.IsNullOrEmpty(searchTerm))
-        {
-            TournamentResponseVariable.AddRange(tournamentSearchResult.Data.Where(t => t.Attributes.Name == searchTerm));
-        }
             TournamentResponseVariable.AddRange(tournamentSearchResult.Data);
         
     }
@@ -144,8 +135,6 @@ public partial class StartPageViewModel : AppViewModelBase
     [RelayCommand]
     private async Task SearchTournament(string searchQuery)
     {
-        searchTerm = searchQuery.Trim();
-
         await Search();
     }
 
@@ -167,3 +156,4 @@ public partial class StartPageViewModel : AppViewModelBase
         await NavigationService.PushAsync(new TournamentDetailsPage(videoId));
     }
 }
+

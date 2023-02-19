@@ -21,6 +21,6 @@ public partial class StartPage : ViewBase<StartPageViewModel>
 
     private async void Login(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new PaginaLogin(new LoginViewModel()));
+        await Navigation.PushAsync(new PaginaLogin());
     }
 }

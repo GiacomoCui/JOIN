@@ -12,7 +12,7 @@ public partial class Utente
    // public List<Tournament> t { get; set; }
 
 
-    public Utente(String nome, int tornei, int vittorie)
+    public Utente(string nome, int tornei, int vittorie)
     {
         this.nome = nome;
         this.tornei = tornei;

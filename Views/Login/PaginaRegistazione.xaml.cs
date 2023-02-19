@@ -9,7 +9,7 @@ public partial class PaginaRegistazione : ContentPage
 	public PaginaRegistazione()
 	{
 		InitializeComponent();
-	}
+    }
 
 	private async void Salva(object sender, EventArgs e)
 	{

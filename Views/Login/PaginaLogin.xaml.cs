@@ -6,11 +6,12 @@ namespace JOIN.Views.Login;
 
 public partial class PaginaLogin : ContentPage
 {
-	public PaginaLogin(LoginViewModel vm)
+	public PaginaLogin()
 	{
-		InitializeComponent();
-		BindingContext = vm;
-	}
+
+        InitializeComponent();
+        NavigationPage.SetHasNavigationBar(this, false);
+    }
 
 	private async void Registrati(object sender, EventArgs e) {
 		await Navigation.PushAsync(new PaginaRegistazione());

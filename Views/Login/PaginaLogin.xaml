@@ -2,24 +2,56 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JOIN.Views.Login.PaginaLogin"
-             Title="Login">
+             Title="">
 
 
-    <Grid Grid.Column="1" Grid.Row="2"
-          RowDefinitions="34,40,22,40,22,44,*"
+    <Grid
+          RowDefinitions="225,25,30,22,40,22,44,15,30,60,Auto"
           ColumnDefinitions="22,*,*,22">
+
+        <Border
+            Grid.Column="1"
+            Grid.Row="1"
+            Margin="140,-115,-100,24"
+            StrokeShape="RoundRectangle 15"
+            BackgroundColor="White"
+            Stroke="{StaticResource Gray600Brush}"
+            >
+
+            <Border.Shadow>
+                <Shadow
+                    Brush="{StaticResource Black}"
+                    Offset="5,5"
+                    Opacity="1.1"/>
+
+            </Border.Shadow>
+            
+            
+        </Border>
         
-        
-        <Button Grid.Row="1"
+        <Label 
+                Grid.Row="1"
                 Grid.Column="1"
-                MaximumHeightRequest="150"
+                Grid.ColumnSpan="2"
+                Margin="0,-90,0,0"
+                HorizontalOptions="Center"
+                Text="Login"
+                FontFamily="BebasRegular"
+                FontSize="50"
+                TextColor="{StaticResource Secondary}"/>
+
+
+
+        <Button Grid.Row="10"
+                Grid.Column="1"
+                MaximumHeightRequest="50"
                 MaximumWidthRequest="150"
                 FontFamily="DINBold"
                 Text="ACCEDI"
                 FontSize="22"
                 Clicked="Accedi"/>
         
-        <Button Grid.Row="1"
+        <Button Grid.Row="10"
                 Grid.Column="2"                
                 MaximumHeightRequest="150"
                 MaximumWidthRequest="150"
@@ -27,46 +59,41 @@
                 Text="REGISTRATI"   
                 FontSize="22"
                 Clicked="Registrati"
+                BackgroundColor="{StaticResource Tertiary}"
                 />
 
-        <Label Grid.Row="2"
+        <Label Grid.Row="4"
                 Grid.Column="1"
                 Grid.ColumnSpan="2"
+               HorizontalOptions="Center"
                 Text="Username"
-                FontSize="16"/>
-        
+                FontFamily="BebasRegular"
+                FontSize="28"/>
+
         <Entry  x:Name="txtNome"
-                Grid.Row="3"
+                Grid.Row="5"
                 Grid.Column="1"
-                Grid.ColumnSpan="2"                
+                Grid.ColumnSpan="2" 
                 Placeholder="Username"
                 />
 
         <Label
-                Grid.Row="4"
+                Grid.Row="6"
                 Grid.Column="1"
                 Grid.ColumnSpan="2"
+                HorizontalOptions="Center"
                 Margin="0,4,0,0"
                 Text="Password"
-                FontSize="16"/>
-        
+                FontFamily="BebasRegular"
+                FontSize="28"
+                Padding="10"/>
+
         <Entry  x:Name="txtPassword"
-                Grid.Row="5"
+                Grid.Row="8"
                 Grid.Column="1"
                 Grid.ColumnSpan="2"                
                 Placeholder="Password"
                 IsPassword="True"
                 />
-
-        <Grid ColumnDefinitions="64"
-                  RowDefinitions="64"
-                  Grid.Column="1"
-                Grid.ColumnSpan="2"
-                  Grid.Row="6"
-                  HorizontalOptions="Center"
-                  VerticalOptions="End"
-                  Margin="0,0,0,13"
-                  >
-        </Grid>
     </Grid>
 </ContentPage>
