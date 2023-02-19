@@ -20,7 +20,7 @@
         <ScrollView>
         
         <Grid
-            RowDefinitions="160,Auto,Auto,Auto,Auto,50,15"
+            RowDefinitions="160,Auto,Auto,Auto,Auto,51,15"
             RowSpacing="12"
             Margin="16,0"
             IsVisible="{Binding DataLoaded, Mode=OneWay}"
