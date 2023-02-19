@@ -19,4 +19,5 @@ global using MonkeyCache.FileStore;
 global using System.Text.Json.Serialization;
 global using JOIN.TournamentResponseModel;
 global using Maui.App.Framework.Extensions;
+global using Npgsql;
 

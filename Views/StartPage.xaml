@@ -59,11 +59,12 @@
                             Opacity=".8"/>
                 </Border.Shadow>
 
-                <Image
+                <ImageButton
                     Source="imgprofilo.png"
                     WidthRequest="300"
                     HeightRequest="300"
-                    Aspect="Fill"/>
+                    Aspect="Fill"
+                    Clicked="Profilo"/>
             </Border>
             
 

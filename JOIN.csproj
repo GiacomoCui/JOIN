@@ -34,7 +34,8 @@
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\logoimagescreen.svg" Color="#97CECC" />
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" />
+		<MauiSplashScreen Include="Resources\Images\joinlogo.gif" Color="#000000" BaseSize="128,128" />
+
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
 		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
@@ -84,6 +85,7 @@
 	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
 	  <PackageReference Include="MonkeyCache.FileStore" Version="2.0.1" />
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3-beta1" />
+	  <PackageReference Include="Npgsql" Version="7.0.2" />
 	  <PackageReference Include="NUnit" Version="3.13.3" />
 	  <PackageReference Include="RestSharp" Version="108.0.3" />
 	  <PackageReference Include="SpecFlow" Version="4.0.16-beta" />
@@ -105,6 +107,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Base\PageBase.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Login\PaginaRegistazione.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\StartPage.xaml">

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JOIN_App.Views.ProfiloUtente.PaginaProfiloUtente"
+             xmlns:viewmodel="clr-namespace:JOIN_App.ViewModels.ProfiloUtente"
+             x:DataType="viewmodel:ProfiloUtenteViewModel"
+             BackgroundColor="Cyan"
+             Title="Profilotente">
+
+    <ScrollView>
+
+        <Grid RowDefinitions="*"
+              ColumnDefinitions="*"
+              RowSpacing="5"
+              ColumnSpacing="5">
+
+            <Grid RowDefinitions="20, 130"
+                  ColumnDefinitions= ".2, .5*,.6*">
+
+                <Border Grid.Row="1"
+                        Grid.Column="1"
+                        WidthRequest="130"
+                        HeightRequest="130"
+                        StrokeThickness="4"
+                        BackgroundColor="White"
+                        Stroke="orange"
+                        StrokeShape="RoundRectangle 100">
+
+                    <ImageButton Source="imgprofilo.png"
+                                 WidthRequest="100"
+                                 HeightRequest="100"/>
+
+                </Border>
+
+                <Grid Grid.Row ="1"
+                      Grid.Column="3"
+                      RowDefinitions="40, 40, 40">
+
+                    <Label Text="{Binding User.nome}"
+                       Grid.Row="0"
+                       FontSize="25"/>
+
+                    <Label Grid.Row="1"
+                       FontSize="25">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Tornei "/>
+                                <Span Text="{Binding User.tornei}"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label Grid.Row="2"
+                       FontSize="25">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Vittorie "/>
+                                <Span Text="{Binding User.vittorie}"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </Grid>
+            </Grid>
+
+            <Grid RowDefinitions="200, 50"
+                  ColumnDefinitions=".05*, .90*, .05*">
+
+                <Button Text="Modifica Profilo"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        FontSize="20"
+                        Clicked="ModificaProfilo"/>
+
+            </Grid>
+
+            <Grid RowDefinitions="255, 145">
+
+                <Label Text="BIO" 
+                       Grid.Row="2"
+                       BackgroundColor="Gray"/>
+
+            </Grid>
+
+            <Grid RowDefinitions="400, *">
+
+            </Grid>
+
+        </Grid>
+
+    </ScrollView>
+
+</ContentPage>
