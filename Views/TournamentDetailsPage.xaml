@@ -16,8 +16,10 @@
 
     <baseviews:ViewBase.PageContent>
 
+        <ScrollView>
+        
         <Grid
-            RowDefinitions="160,Auto,Auto,Auto,Auto,*,56"
+            RowDefinitions="160,Auto,Auto,Auto,Auto,56"
             RowSpacing="12"
             Margin="16,0"
             IsVisible="{Binding DataLoaded, Mode=OneWay}"
@@ -173,6 +175,7 @@
             </Grid>
 
             <Border
+                x:Name="descriptionTournament"
                 Grid.Row="3"
                 BackgroundColor="White"
                 Margin="16"
@@ -182,21 +185,40 @@
                     <Shadow 
                         Brush="{StaticResource Gray200Brush}"
                         Offset="3,3"
-                        Opacity=".6"/>
+                        Opacity=".8"/>
                 </Border.Shadow>
 
                 <Label
                     Grid.Row="3"
                     HorizontalOptions="Fill"
-                    Margin="10"
-                    Style="{StaticResource MediumDarkText14}"
+                    Margin="16"
+                    TextType="Html"
                     Text="{Binding TheTournament.Description}"
                     LineBreakMode="WordWrap"/>
 
 
             </Border>
-            
-        </Grid>
 
+                <Button
+                    x:Name="btnIscrizione"
+                    Grid.Row="5"
+                    Opacity="0"
+                    Padding="0"
+                    Margin="0,0,0,10"
+                    CornerRadius="8"
+                    VerticalOptions="Fill"
+                    HorizontalOptions="Fill"
+                    Text="Iscriviti"
+                    TextColor="{StaticResource Secondary}"
+                    FontSize="18"
+                    FontFamily="RobotoSemiBold"
+                    BorderColor="{StaticResource LightBoredreColor}"
+                    BorderWidth="0.5"
+                    BackgroundColor="{StaticResource Primary}"
+                    />
+
+
+            </Grid>
+        </ScrollView>
     </baseviews:ViewBase.PageContent>
 </baseviews:ViewBase>
