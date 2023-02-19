@@ -20,7 +20,7 @@
         <ScrollView>
         
         <Grid
-            RowDefinitions="160,Auto,Auto,Auto,Auto,56"
+            RowDefinitions="160,Auto,Auto,Auto,Auto,50,15"
             RowSpacing="12"
             Margin="16,0"
             IsVisible="{Binding DataLoaded, Mode=OneWay}"
@@ -205,7 +205,6 @@
                     Grid.Row="5"
                     Opacity="0"
                     Padding="0"
-                    Margin="0,0,0,10"
                     CornerRadius="8"
                     VerticalOptions="Fill"
                     HorizontalOptions="Fill"
@@ -228,10 +227,23 @@
                     SheetHeight="660"
                     Theme="Light">
                     <btnshtcontrols:BottomSheet.BottomSheetContent>
+ 
+                            <VerticalStackLayout
+                                Spacing="15">
+                                
+                            <Label Text="Nome" />
+                            <Entry x:Name="nomeEntry" Placeholder="Inserisci il tuo nome" />
 
-                        <Label
-                            Text="{Binding TheTournament.Name, Mode=OneWay}"
-                            Style="{StaticResource MediumDarkText14}"/>
+                            <Label Text="Cognome" />
+                            <Entry x:Name="cognomeEntry" Placeholder="Inserisci il tuo cognome" />
+
+                            <Label Text="Email" />
+                            <Entry x:Name="emailEntry" Placeholder="Inserisci la tua email" />
+
+                            <Label Text="Seleziona se desideri ricevere una notifica all'inizio dell'evento" />
+                            <Switch x:Name="notificationSwitch" />
+
+                        </VerticalStackLayout>
 
                     </btnshtcontrols:BottomSheet.BottomSheetContent>
                 </btnshtcontrols:BottomSheet>

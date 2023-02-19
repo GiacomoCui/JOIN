@@ -30,7 +30,7 @@ public class TournamentService : RestServiceBase, IApiService
     {
         var request = new RestRequest("tournaments.json");
         request.AddParameter("page", nextPageToken);
-        request.AddParameter("per_page", 2);
+        request.AddParameter("per_page", 50);
         request.AddHeader("Authorization-Type", "v1");
         request.AddHeader("Authorization", $"{Constants.ApiKey}");
         request.AddHeader("Content-Type", "application/vnd.api+json");

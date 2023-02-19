@@ -250,7 +250,7 @@
     
     <Style TargetType="Label" x:Key="BaseMediumLightLabelTextStyle">
         <Setter Property="LineBreakMode" Value="TailTruncation"/>
-        <Setter Property="FontFamily" Value="RobotoMedium" />
+        <Setter Property="FontFamily" Value="BebasRegular" />
         <Setter Property="FontAutoScalingEnabled" Value="False"/>
         <Setter Property="TextColor" Value="White"/>
     </Style>

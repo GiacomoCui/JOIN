@@ -12,7 +12,8 @@ public static class MauiProgram
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont(filename: "Roboto-Regular.ttf", alias:"RobotoRegular");
-				fonts.AddFont(filename: "Roboto-Semibold.ttf", alias:"RobotoSemiBold");
+                fonts.AddFont(filename: "BebasNeue-Regular.ttf", alias: "BebasRegular");
+                fonts.AddFont(filename: "Roboto-Semibold.ttf", alias:"RobotoSemiBold");
 				fonts.AddFont(filename:"materialdesignicons-webdont.ttf", alias:"MaterialIconFont");
 			}).ConfigureLifecycleEvents(events =>
 			{

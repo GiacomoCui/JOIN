@@ -39,7 +39,8 @@
                 Text="{Binding WelcomeMessage, Mode=OneWay}"
                 HorizontalOptions="Center"
                 VerticalOptions="End"
-                Style="{StaticResource MediumDarkText18}">
+                Style="{StaticResource MediumDarkText18}"
+                FontSize="30">
             </Label>
             
             <Border
@@ -85,57 +86,11 @@
                 <!-- Barra di ricerca da sostituire con dei pulsanti per navigare tra i tornei -->
                 
                 <CollectionView.Header>
-                    <ContentView>
-
-                        <Border
-                            Padding="12,4"
-                            BackgroundColor="{StaticResource LightBoredreColor}"
-                            Stroke="Transparent"
-                            HorizontalOptions="Fill"
-                            Margin="0,0,0,12"
-                            HeightRequest="40"
-                            StrokeShape="RoundRectangle 8">
-
-                            <Grid
-                                HorizontalOptions="Fill"
-                                VerticalOptions="Center"
-                                ColumnDefinitions="*,Auto"
-                                ColumnSpacing="16">
-
-                                <Image
-                                    WidthRequest="18"
-                                    HeightRequest="18"
-                                    Source="icnsearch.png"
-                                    Grid.Column="1"
-                                    VerticalOptions="Center">
-
-                                    <Image.GestureRecognizers>
-                                        <TapGestureRecognizer
-                                            Command="{Binding SearchTournamentCommand}"
-                                            CommandParameter="{Binding Path=Text, Source={x:Reference txtSearchQuery}, Mode=OneWay}"
-                                            />
-                                    </Image.GestureRecognizers>
-
-                                </Image>
-
-                                <Entry
-                                    x:Name="txtSearchQuery"
-                                    Placeholder="Search..."
-                                    PlaceholderColor="White"
-                                    Grid.Column="0"
-                                    VerticalOptions="Center"
-                                    HorizontalOptions="Fill"
-                                    BackgroundColor="Transparent"
-                                    FontFamily="RegularFont"
-                                    FontSize="16"
-                                    TextColor="{StaticResource White}"
-                                    VerticalTextAlignment="Center"
-                                    Completed="txtSearchQuery_Completed"/>
-
-                            </Grid>
-                        </Border>
-
-                    </ContentView>
+                    <Label
+                        Margin="6,0,0,0"
+                        Text="Nuovi Tornei"
+                        Style="{StaticResource MediumDarkText18}"
+                        FontSize="25"/>
                 </CollectionView.Header>
 
                 <CollectionView.ItemTemplate>

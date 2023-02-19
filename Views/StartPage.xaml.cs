@@ -7,9 +7,4 @@ public partial class StartPage : ViewBase<StartPageViewModel>
 	{
 		InitializeComponent();
 	}
-
-     void txtSearchQuery_Completed(object sender, EventArgs e)
-	{
-		ViewModel.SearchTournamentCommand.Execute(txtSearchQuery.Text);
-	}
 }
