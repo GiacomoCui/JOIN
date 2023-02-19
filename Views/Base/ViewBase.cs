@@ -6,6 +6,7 @@ public class ViewBase<TViewModel> : PageBase where TViewModel : AppViewModelBase
     protected bool _isLoaded = false;
     protected TViewModel ViewModel { get; set; }
     protected object ViewModelParameters { get; set; }
+
     protected event EventHandler ViewModelInitialized;
 
     public ViewBase() : base()

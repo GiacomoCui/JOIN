@@ -26,7 +26,7 @@
                         Stroke="orange"
                         StrokeShape="RoundRectangle 100">
 
-                    <ImageButton Source="dotnet_bot.png"
+                    <ImageButton Source="imgprofilo.png"
                                  WidthRequest="100"
                                  HeightRequest="100"/>
 

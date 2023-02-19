@@ -4,7 +4,10 @@ using Microsoft.UI.Windowing;
 using Windows.Graphics;
 #endif
 
-using JOIN_App;
+
+
+using JOIN.ViewModels.Login;
+using JOIN.Views.Login;
 
 namespace JOIN;
 public partial class App : Application
@@ -16,8 +19,8 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-        //enable version tracking
-        VersionTracking.Track();
+		//enable version tracking
+		VersionTracking.Track();
 
 		//set App size on MS Windows
 		Microsoft.Maui.Handlers.WindowHandler.Mapper.AppendToMapping(nameof(IWindow), (handler, view) =>
@@ -33,8 +36,8 @@ public partial class App : Application
 #endif
 		});
 
-		MainPage = new AppShell();
-        MainPage = new NavigationPage(new StartPage());
-    }
+
+		MainPage = new NavigationPage(new PaginaLogin(new LoginViewModel()));
+	}
 
 }

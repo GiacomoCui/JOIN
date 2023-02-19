@@ -1,11 +1,4 @@
-﻿using JOIN.Models;
-using JOIN.Views.ProfiloUtente;
-using JOIN_App.ViewControls.Utenti;
-using JOIN_App.ViewModels.ProfiloUtente;
-using JOIN_App.Views.ProfiloUtente;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Maui.LifecycleEvents;
-using MonkeyCache.FileStore;
+﻿
 
 namespace JOIN;
 
@@ -18,9 +11,9 @@ public static class MauiProgram
 			.UseMauiApp<App>()
 			.ConfigureFonts(fonts =>
 			{
-				fonts.AddFont("Roboto-Regular.ttf", "RobotoRegular");
-				fonts.AddFont("Roboto-Semibold.ttf", "RobotoSemiBold");
-				fonts.AddFont("materialdesignicons-webdont.ttf", "IconFont");
+				fonts.AddFont(filename: "Roboto-Regular.ttf", alias:"RobotoRegular");
+				fonts.AddFont(filename: "Roboto-Semibold.ttf", alias:"RobotoSemiBold");
+				fonts.AddFont(filename:"materialdesignicons-webdont.ttf", alias:"MaterialIconFont");
 			}).ConfigureLifecycleEvents(events =>
 			{
 			#if ANDROID
@@ -36,12 +29,8 @@ public static class MauiProgram
 			#endif
 			});
 
-		builder.Services.AddTransient<PaginaProfiloUtente>();
-        builder.Services.AddTransient<ProfiloUtenteViewModel>();
-        builder.Services.AddTransient<Utente>();
-
-        //Register Services
-        RegisterAppServices(builder.Services);
+		//Register Services
+		RegisterAppServices(builder.Services);
 
 		return builder.Build();
 	}
@@ -49,17 +38,18 @@ public static class MauiProgram
 	private static void RegisterAppServices(IServiceCollection services)
 	{
 		//Add Platform specific Dependencies
-		services.AddSingleton<IConnectivity>(Connectivity.Current);
+		services.AddSingleton(Connectivity.Current);
 
 		//Register Cache Barrel
 		Barrel.ApplicationId = Constants.ApplicationId;
-		services.AddSingleton<IBarrel>(Barrel.Current);
+		services.AddSingleton(Barrel.Current);
 
 		//Register API Services
+		services.AddSingleton<IApiService, TournamentService>();
 
 
 		services.AddSingleton<StartPageViewModel>();
-
-    }
+		
+	}
 
 }

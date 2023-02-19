@@ -1,7 +1,4 @@
 ﻿
-using JOIN_App.ViewModels.ProfiloUtente;
-using JOIN_App.Views.ProfiloUtente;
-
 namespace JOIN.ViewModels.Base;
 
     public partial class AppViewModelBase : ViewModelBase
@@ -14,13 +11,6 @@ namespace JOIN.ViewModels.Base;
         {
         _appApiService = appApiService;
         }
-    public AppViewModelBase() : base()
-    {
-
-    }
-
-    
-    
 
     [RelayCommand]
     private async Task NavigateBack() => 

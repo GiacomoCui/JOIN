@@ -40,22 +40,22 @@ public partial class ErrorIndicator : VerticalStackLayout
 
     public static readonly BindableProperty ErrorImageProperty = BindableProperty.Create(
         "ErrorImage",
-        typeof(string),
+        typeof(ImageSource),
         typeof(ErrorIndicator),
-        string.Empty,
+        null,
         BindingMode.OneWay,
         null,
         SetErrorImage
         );
 
-    public string ErrorImage
+    public ImageSource ErrorImage
     {
-        get => (string)GetValue(ErrorTextProperty);
-        set => SetValue(ErrorTextProperty, value);
+        get => (ImageSource)GetValue(ErrorImageProperty);
+        set => SetValue(ErrorImageProperty, value);
     }
 
     public static void SetErrorImage(BindableObject bindable, object oldValue, object newValue) =>
-    (bindable as ErrorIndicator).imgError.Text= (string)newValue;
+    (bindable as ErrorIndicator).imgError.Source= (ImageSource)newValue;
 
     public ErrorIndicator()
 	{

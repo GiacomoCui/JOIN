@@ -6,24 +6,24 @@
                      IsVisible="false"
                      Padding="48,12">
 
-    <Label
+    <Image
         x:Name="imgError"
-        FontFamily="IconFont"
-        Text="{x:Static helpers:IconFont.AlertBox}"
-        FontSize="64"
-        TextColor="{StaticResource Primary}"/>
+        Source="{Binding ErrorImage, Mode=OneWay}"
+        HorizontalOptions="Center"
+        WidthRequest="64"
+        HeightRequest="64"
+        Aspect="AspectFit"/>
 
     <Label
         Margin="0,12,0,0"
         Text="Ops!"
-        Style="{StaticResource MediumLightText18}"
+        Style="{StaticResource MediumDarkText18}"
         HorizontalOptions="Center"
         HorizontalTextAlignment="Center"/>
 
     <Label
         x:Name="lblErrorText"
-        Style="{StaticResource RegularLightText14}"
-        Text="Error Occoured, Retry!"
+        Style="{StaticResource MediumDarkText14}"
         LineBreakMode="WordWrap"
         HorizontalOptions="Center"
         HorizontalTextAlignment="Center"/>
