@@ -88,7 +88,7 @@ public partial class StartPageViewModel : AppViewModelBase
             nextPageToken = null;
         }
 
-        tournamentSearchResult.Data.ForEach(x => { x.Attributes.RelationshipsCopy = x.Relationships; });
+        tournamentSearchResult.Data.ForEach(x => { x.Attributes.RelationshipsCopy = x.Relationships;});
 
         tournamentSearchResult.Data.ForEach(x => { if (x.Attributes.SignupCap is null) x.Attributes.SignupCap = "Infinito"; });
 

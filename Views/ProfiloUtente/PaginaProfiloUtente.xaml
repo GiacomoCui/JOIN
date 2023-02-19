@@ -4,7 +4,7 @@
              x:Class="JOIN_App.Views.ProfiloUtente.PaginaProfiloUtente"
              xmlns:viewmodel="clr-namespace:JOIN_App.ViewModels.ProfiloUtente"
              x:DataType="viewmodel:ProfiloUtenteViewModel"
-             BackgroundColor="Cyan"
+             BackgroundColor="White"
              Title="Profilotente">
 
     <ScrollView>
