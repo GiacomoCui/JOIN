@@ -47,6 +47,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiImage Remove="Resources\Images\icnmenuclose.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="Resources\Fonts\materialdesignicons-webfont.ttf" />
 	  <None Remove="Resources\Fonts\Roboto-Black.ttf" />
 	  <None Remove="Resources\Fonts\Roboto-BlackItalic.ttf" />
@@ -62,6 +66,7 @@
 	  <None Remove="Resources\Fonts\Roboto-ThinItalic.ttf" />
 	  <None Remove="Resources\Images\callofdutywarzone.png" />
 	  <None Remove="Resources\Images\error.png" />
+	  <None Remove="Resources\Images\icnmenuclosedark.png" />
 	  <None Remove="Resources\Images\icnsearch.png" />
 	  <None Remove="Resources\Images\imgprofilo.png" />
 	  <None Remove="Resources\Images\joinlogo.gif" />

@@ -7,6 +7,7 @@
     xmlns:models="clr-namespace:JOIN.TournamentResponseModel"
     xmlns:viewmodels="clr-namespace:JOIN.ViewModels"
     xmlns:controls="clr-namespace:JOIN.ViewControls"
+    xmlns:btnshtcontrols="clr-namespace:Maui.App.Framework.Bottomsheet;assembly=Maui.App.Framework"
     x:TypeArguments="viewmodels:TournamentDetailsPageViewModel"
     x:DataType="viewmodels:TournamentDetailsPageViewModel"
     PageMode="Navigate"
@@ -215,8 +216,25 @@
                     BorderColor="{StaticResource LightBoredreColor}"
                     BorderWidth="0.5"
                     BackgroundColor="{StaticResource Primary}"
+                    Clicked="btnTournamnet_Clicked"
                     />
 
+                <btnshtcontrols:BottomSheet
+                    Margin="-16,0"
+                    x:Name="IscrizioneButtonSheet"
+                    Grid.Row="0"
+                    Grid.RowSpan="8"
+                    HeaderText="{Binding TheTournament.Name, Mode=OneWay, StringFormat='ISCRIZIONE {0}'}"
+                    SheetHeight="660"
+                    Theme="Light">
+                    <btnshtcontrols:BottomSheet.BottomSheetContent>
+
+                        <Label
+                            Text="{Binding TheTournament.Name, Mode=OneWay}"
+                            Style="{StaticResource MediumDarkText14}"/>
+
+                    </btnshtcontrols:BottomSheet.BottomSheetContent>
+                </btnshtcontrols:BottomSheet>
 
             </Grid>
         </ScrollView>
