@@ -1,4 +1,5 @@
 ﻿
+using JOIN.Control;
 using JOIN.Models;
 
 namespace JOIN_App.ViewControls.Utenti;
@@ -12,14 +13,14 @@ public partial class Utente
    // public List<Tournament> t { get; set; }
 
 
-    public Utente(String nome, int tornei, int vittorie)
+    public Utente(string nome)
     {
         this.nome = nome;
-        this.tornei = tornei;
-        this.vittorie = vittorie;
     }
 
-    public Utente()
+    public void SetTornei(Utente user)
     {
+        Connessione con = new Connessione();
+        NpgsqlCommand cmd = new NpgsqlCommand();
     }
 }

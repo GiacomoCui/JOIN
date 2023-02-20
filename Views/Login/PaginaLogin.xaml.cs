@@ -1,5 +1,6 @@
 using JOIN.Control;
 using JOIN.ViewModels.Login;
+using JOIN_App.ViewControls.Utenti;
 using NpgsqlTypes;
 
 namespace JOIN.Views.Login;
@@ -55,9 +56,11 @@ public partial class PaginaLogin : ContentPage
             await DisplayAlert("Username o Password Errati", "Riprova", "Ok");
             return;
         }
-
         else
+        {
+            Utente user = new Utente (nome);
             await Navigation.PushAsync(new StartPage());
+        }
 
         con.Close(); //Chiusura
 

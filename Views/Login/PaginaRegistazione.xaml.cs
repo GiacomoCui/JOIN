@@ -9,7 +9,8 @@ public partial class PaginaRegistazione : ContentPage
 	public PaginaRegistazione()
 	{
 		InitializeComponent();
-	}
+        NavigationPage.SetHasNavigationBar(this, false);
+    }
 
 	private async void Salva(object sender, EventArgs e)
 	{
