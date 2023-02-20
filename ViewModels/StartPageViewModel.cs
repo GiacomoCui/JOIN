@@ -1,4 +1,6 @@
-﻿namespace JOIN.ViewModels;
+﻿using JOIN_App.ViewControls.Utenti;
+
+namespace JOIN.ViewModels;
 
 public partial class StartPageViewModel : AppViewModelBase
     {
@@ -17,8 +19,6 @@ public partial class StartPageViewModel : AppViewModelBase
         {
         Title = "Home";
         //rendere dinamica questa parte del codice. Appena il DB sarà implementato, inserire la presa del nome nella funzione a riga 70
-        WelcomeMessage= TakeUserName();
-
         nextPageToken= "1";
         }
 
@@ -115,15 +115,6 @@ public partial class StartPageViewModel : AppViewModelBase
             
         });
     }
-
-
-    private static string TakeUserName()
-    {
-        string username;
-        username = "KiritoVegetable"; //inserire qui la funzione per prendere il nome dell'utente
-        return $"Ben tornato, {username}";
-    }
-
 
     //inserire qui il comando per aprire la pagina delle impostazioni
     [RelayCommand]

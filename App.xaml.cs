@@ -9,6 +9,7 @@ using Windows.Graphics;
 
 using JOIN.ViewModels.Login;
 using JOIN.Views.Login;
+using JOIN_App.ViewControls.Utenti;
 
 namespace JOIN;
 public partial class App : Application
@@ -39,5 +40,4 @@ public partial class App : Application
 
 		MainPage = new NavigationPage(new PaginaLogin());
 	}
-
 }

@@ -35,14 +35,13 @@
 
             <Label
                 Grid.Row="0"
-                Margin="0,0,0,40"
-                Text="{Binding WelcomeMessage, Mode=OneWay}"
+                Margin="0,0,0,40"                
                 HorizontalOptions="Center"
-                VerticalOptions="End"
+                VerticalOptions="End"                
                 Style="{StaticResource MediumDarkText18}"
-                FontSize="30">
-            </Label>
-            
+                FontSize="30"
+                Text="Bentornato"/>
+
             <Border
                 Grid.Row="1"
                 HorizontalOptions="Center"

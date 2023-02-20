@@ -12,10 +12,9 @@ public partial class ProfiloUtenteViewModel : ObservableObject
 
     public ProfiloUtenteViewModel(Utente user)
     {
-      if (user == null)
-        user = new Utente("UserX", 0, 0);
-        
         this.user = user;
+        this.user.SetTornei(user);
+        this.user.SetVittorie(user);
     }
 
     public Utente GetUtente()
@@ -29,25 +28,4 @@ public partial class ProfiloUtenteViewModel : ObservableObject
     {
         await Shell.Current.GoToAsync($"{nameof(PaginaProfiloModificabile)}");
     }
-    
-    /*
-    [RelayCommand]
-    async Task Add()
-    {
-        //Se non si inserisce nienete allora non alterare lo stato attuale della collezione
-        if (string.IsNullOrWhiteSpace(Text))
-            return;
-
-        //Verifica se il dispositivo è connesso
-        if (connectivity.NetworkAccess != NetworkAccess.Internet)
-        {
-            await Shell.Current.DisplayAlert("Errore:No Internet", "Connesione Internet Assente", "OK"); //Messaggio d'errore
-            return;
-        }
-
-        //Elemento.Add(text);  //Aggiunge un nuovo elemento
-        Text = string.Empty; //Ripulisce la stringa
-    }
-    */
-
 }

@@ -1,5 +1,6 @@
 using JOIN.Control;
 using JOIN.ViewModels.Login;
+using JOIN_App.ViewControls.Utenti;
 using NpgsqlTypes;
 
 namespace JOIN.Views.Login;
@@ -19,6 +20,7 @@ public partial class PaginaLogin : ContentPage
 
 	private async void Accedi(object sender, EventArgs e)
 	{
+        Console.WriteLine("Bene (Accedi)\n");
         Connessione con = new Connessione();
         NpgsqlCommand cmd = new NpgsqlCommand();
 
@@ -56,9 +58,10 @@ public partial class PaginaLogin : ContentPage
             await DisplayAlert("Username o Password Errati", "Riprova", "Ok");
             return;
         }
-
-        else
-            await Navigation.PushAsync(new StartPage());
+        else {
+            Utente user = new Utente(nome);
+            await Navigation.PushAsync(new StartPage(user));
+        }
 
         con.Close(); //Chiusura
 
