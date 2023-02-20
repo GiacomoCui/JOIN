@@ -22,6 +22,7 @@ public partial class ProfiloUtenteViewModel : ObservableObject
         return user;
     }
 
+
     /*Per andare nella pagina delle modifiche*/
     [RelayCommand]
     async Task ModificaProfilo()

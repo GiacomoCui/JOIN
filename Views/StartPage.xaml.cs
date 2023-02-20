@@ -18,6 +18,6 @@ public partial class StartPage : ViewBase<StartPageViewModel>
     }
     private async void Profilo(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new PaginaProfiloUtente(new ProfiloUtenteViewModel(this.user)));
+        await Navigation.PushAsync(new PaginaProfiloUtente(this.user, new ProfiloUtenteViewModel(this.user)));
     }
 }
