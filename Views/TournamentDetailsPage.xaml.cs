@@ -52,4 +52,16 @@ public partial class TournamentDetailsPage : ViewBase<TournamentDetailsPageViewM
     {
         await IscrizioneButtonSheet.OpenBottomSheet();
     }
+
+    //Da inserire la modifica del profilo
+
+    private void Accetta_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
+    private async void Annulla_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PopAsync();
+    }
 }

@@ -12,14 +12,23 @@ public partial class PaginaProfiloUtente : ContentPage
     public PaginaProfiloUtente(ProfiloUtenteViewModel vm)
     {
         InitializeComponent();
+        NavigationPage.SetHasNavigationBar(this, false);
         BindingContext = vm;
         this.vm = vm;   
     }
 
     private async void ModificaProfilo(object sender, EventArgs e)
     {
+        await ModificaButtonSheet.OpenBottomSheet();
+    }
 
-        await Navigation.PushAsync(new PaginaProfiloModificabile(new PaginaProfiloModificabileViewModel(vm.GetUtente())));
+    private async void Modifica_Clicked(object sender, EventArgs e)
+    {
+        
+    }
 
+    private async void Annulla_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PopAsync();
     }
 }

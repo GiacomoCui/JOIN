@@ -227,8 +227,11 @@
                     SheetHeight="660"
                     Theme="Light">
                     <btnshtcontrols:BottomSheet.BottomSheetContent>
- 
-                            <VerticalStackLayout
+                        <Grid
+                            RowDefinitions="*,Auto"
+                            RowSpacing="20">
+                        <VerticalStackLayout
+                            Grid.Row="0"
                                 Spacing="15">
                                 
                             <Label Text="Nome" />
@@ -241,10 +244,28 @@
                             <Entry x:Name="emailEntry" Placeholder="Inserisci la tua email" />
 
                             <Label Text="Seleziona se desideri ricevere una notifica all'inizio dell'evento" />
-                            <Switch x:Name="notificationSwitch" />
+                            <Switch x:Name="notificationSwitch"/>
 
                         </VerticalStackLayout>
-
+                            <HorizontalStackLayout
+                                Grid.Row="1"
+                                Spacing="30"
+                                HorizontalOptions="CenterAndExpand"
+                                Margin="10">
+                                <Button
+                            Text="Conferma"
+                            Clicked="Accetta_Clicked"
+                            BackgroundColor="{StaticResource Tertiary}"
+                            TextColor="White"
+                            />
+                                <Button
+                            Text="Annulla"
+                            Clicked="Annulla_Clicked"
+                            BackgroundColor="Red"
+                            TextColor="White"
+                            />
+                            </HorizontalStackLayout>
+                        </Grid>
                     </btnshtcontrols:BottomSheet.BottomSheetContent>
                 </btnshtcontrols:BottomSheet>
 
