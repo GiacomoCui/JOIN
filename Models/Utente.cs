@@ -27,7 +27,10 @@ public partial class Utente
         con.Open();
         cmd.Connection = con.GetCon();
 
-        string query = "SELECT COUNT(torneo) FROM Utente JOIN Partecipazione on codice = utente WHERE nome = @nome";
+        string query = "SELECT COUNT(torneo) " +
+                       "FROM Utente u JOIN Partecipazione on u.codice = utente " +
+                       "WHERE nome = @nome " +
+                       "GROUP BY nome";
         cmd.CommandText = query;
         cmd.Parameters.AddWithValue("@nome", user.nome);
         int num_tornei = Convert.ToInt32(cmd.ExecuteScalar());
@@ -45,12 +48,15 @@ public partial class Utente
         con.Open();
         cmd.Connection = con.GetCon();
 
-        string query = "SELECT COUNT(posizione) FROM Utente JOIN Partecipazione on codice = utente WHERE nome = @nome AND posizione = 1";
+        string query = "SELECT COUNT(posizione) " +
+                       "FROM Utente u JOIN Partecipazione on u.codice = utente " +
+                       "WHERE nome = @nome AND posizione = 1 " +
+                       "GROUP BY nome";
         cmd.CommandText = query;
         cmd.Parameters.AddWithValue("@nome", user.nome);
-        int num_tornei = Convert.ToInt32(cmd.ExecuteScalar());
+        int num_vittorie = Convert.ToInt32(cmd.ExecuteScalar());
 
-        user.tornei = num_tornei;
+        user.vittorie = num_vittorie;
 
         con.Close();
     }

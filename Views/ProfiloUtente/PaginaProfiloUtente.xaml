@@ -75,7 +75,7 @@
 
             <Grid RowDefinitions="255, 145">
 
-                <Label Text="BIO" 
+                <Label Text="{Binding User.bio}" 
                        Grid.Row="2"
                        BackgroundColor="Gray"/>
 

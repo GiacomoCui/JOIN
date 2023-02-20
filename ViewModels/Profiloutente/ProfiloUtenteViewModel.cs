@@ -13,8 +13,8 @@ public partial class ProfiloUtenteViewModel : ObservableObject
     public ProfiloUtenteViewModel(Utente user)
     {
         this.user = user;
-        this.user.SetTornei(user);
-        this.user.SetVittorie(user);
+        this.user.SetTornei(this.user);
+        this.user.SetVittorie(this.user);
     }
 
     public Utente GetUtente()
