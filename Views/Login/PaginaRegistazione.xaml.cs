@@ -11,9 +11,9 @@ public partial class PaginaRegistazione : ContentPage
 		InitializeComponent();
     }
 
-	private async void Salva(object sender, EventArgs e)
-	{
-		Connessione con = new Connessione();
+    private async void Salva(object sender, EventArgs e)
+    {
+        Connessione con = new Connessione();
         NpgsqlCommand cmd = new NpgsqlCommand();
 
         string nome = txtNome.Text;
@@ -74,7 +74,7 @@ public partial class PaginaRegistazione : ContentPage
         con.Close(); //Chiusura
 
         await DisplayAlert("REGISTRAZIONE COMPLETATA", "Benvenuto nel club dei registarti", "Daje");
-        
+
         txtNome.Text = "";
         txtPassword.Text = "";
     }
