@@ -9,26 +9,9 @@
           RowDefinitions="225,25,30,22,40,22,44,15,30,60,Auto"
           ColumnDefinitions="22,*,*,22">
 
-        <Border
-            Grid.Column="1"
-            Grid.Row="1"
-            Margin="140,-115,-100,24"
-            StrokeShape="RoundRectangle 15"
-            BackgroundColor="White"
-            Stroke="{StaticResource Gray600Brush}"
-            >
 
-            <Border.Shadow>
-                <Shadow
-                    Brush="{StaticResource Black}"
-                    Offset="5,5"
-                    Opacity="1.1"/>
 
-            </Border.Shadow>
-            
-            
-        </Border>
-        
+
         <Label 
                 Grid.Row="1"
                 Grid.Column="1"
