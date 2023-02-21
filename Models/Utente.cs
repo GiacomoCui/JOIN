@@ -60,4 +60,37 @@ public partial class Utente
 
         con.Close();
     }
+
+    public Utente() { }
+
+    public void GetBioDB(Utente user)
+    {
+        Connessione con = new Connessione();
+        NpgsqlCommand cmd = new NpgsqlCommand();
+
+        con.Open();
+        cmd.Connection = con.GetCon();
+
+        string query = "SELECT bio " +
+                       "FROM Utente " +
+                       "WHERE nome = @nome";
+
+        cmd.CommandText = query;
+        cmd.Parameters.AddWithValue("@nome", user.nome);
+        cmd.Prepare();
+        user.bio = cmd.ExecuteScalar()?.ToString();
+
+        con.Close();
+    }
+
+    public void SetNome(string nome_nuovo)
+    {
+        this.nome = nome_nuovo;
+    }
+
+    public void SetBio(string bio_nuovo)
+    {
+        this.bio = bio_nuovo;
+    }
+
 }

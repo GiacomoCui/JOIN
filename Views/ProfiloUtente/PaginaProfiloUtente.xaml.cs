@@ -82,9 +82,13 @@ public partial class PaginaProfiloUtente : ContentPage
         cmd.Prepare();
         cmd.ExecuteNonQuery();
 
+        user.SetNome(nome);
+        user.SetBio(bio);
+
         con.Close(); //Chiusura
 
         await DisplayAlert("MODIFICA EFFETTUATA", "", "OK");
+        
 
         txtNome.Text = "";
         txtBio.Text = "";
