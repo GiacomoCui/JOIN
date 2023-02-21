@@ -56,7 +56,9 @@
         <Entry  x:Name="txtNome"
                 Grid.Row="5"
                 Grid.Column="1"
+                IsEnabled="True"
                 Grid.ColumnSpan="2" 
+                Keyboard="Chat"
                 Placeholder="Username"
                 />
 

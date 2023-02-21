@@ -64,5 +64,11 @@ public partial class TournamentDetailsPageViewModel : AppViewModelBase
         });
     }
 
+    [RelayCommand]
+    private async Task Iscrizione_cliccata()
+    {
+
+    }
+
 
 }

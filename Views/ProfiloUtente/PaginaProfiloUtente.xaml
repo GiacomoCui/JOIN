@@ -10,7 +10,7 @@
     <ScrollView>
 
         <Grid
-            RowDefinitions="60,150,55,40,150,*"
+            RowDefinitions="60,150,55,40,250, 30,*"
             Margin="6">
 
             <Grid
@@ -78,8 +78,8 @@
 
                 </VerticalStackLayout>
 
-               
-                
+
+
             </Grid>
 
             <Button Text="Modifica Profilo"
@@ -90,21 +90,25 @@
                         Clicked="ModificaProfilo"/>
 
             <Border
-               Margin="20"
-                Grid.Row="4"
+               Margin="20,20,20,0"
+                Grid.Row="4"               
                 Stroke="{StaticResource Gray200}"
-                StrokeShape="RoundRectangle 15"
+                StrokeShape="RoundRectangle 5"
                 BackgroundColor="White">
                 <Border.Shadow>
                     <Shadow
                         Brush="{StaticResource Gray400Brush}"
-                        Offset="1,7"
+                        Offset="3,7"
                         Opacity=".8"/>
                 </Border.Shadow>
 
-                <Label Text="BIO"
-                       Margin="10"
+                <Label Text="{Binding User.bio}"
+                       LineBreakMode="WordWrap"
+                       Grid.Row="4"
+                       Margin="25,20,0,0"
                        Style="{StaticResource RegularDarkText14}"
+                       FontSize="14"
+                       HorizontalOptions="Fill"
                        />
 
             </Border>
@@ -121,36 +125,38 @@
                     <Grid
                         RowDefinitions="*,Auto"
                         RowSpacing="20">
-                    <VerticalStackLayout
+                        <VerticalStackLayout
                         Grid.Row="0"
                                 Spacing="15">
 
-                        <Label Text="Username" />
-                        <Entry x:Name="nomeEntry" Placeholder="Inserisci il tuo nome" />
+                            <Label Text="Nuovo Username" />
+                            <Entry x:Name="txtNome" 
+                                   Placeholder="Usarname"/>
 
-                        <Label Text="Bio" />
-                        <Entry x:Name="cognomeEntry" Placeholder="Inserisci il tuo cognome" />
-                           
-                    </VerticalStackLayout>
+                            <Label Text="Nuova Bio" />
+                            <Entry x:Name="txtBio" Placeholder="Bio" />
 
-                    <HorizontalStackLayout
+                        </VerticalStackLayout>
+
+                        <HorizontalStackLayout
                                 Grid.Row="1"
                                 Spacing="30"
                                 HorizontalOptions="CenterAndExpand"
                                 Margin="10">
-                        <Button
+
+                            <Button
                             Text="Conferma"
                             Clicked="Modifica_Clicked"
                             BackgroundColor="{StaticResource Tertiary}"
-                            TextColor="White"
-                            />
-                        <Button
+                            TextColor="White"/>
+
+                            <Button
                             Text="Annulla"
                             Clicked="Annulla_Clicked"
                             BackgroundColor="Red"
                             TextColor="White"
                             />
-                    </HorizontalStackLayout>
+                        </HorizontalStackLayout>
                     </Grid>
                 </btnshtcontrols:BottomSheet.BottomSheetContent>
             </btnshtcontrols:BottomSheet>

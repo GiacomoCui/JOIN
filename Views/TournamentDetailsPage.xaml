@@ -48,7 +48,7 @@
                         HorizontalOptions="Fill"
                         Aspect="AspectFill"
                         Margin="0"
-                        Source="callofdutywarzone.png">
+                        Source="{Binding TheTournament.ImmagineTorneo}">
                     </Image>
                     
                 </Grid>
@@ -180,7 +180,7 @@
                 Grid.Row="3"
                 BackgroundColor="White"
                 Margin="16"
-                StrokeShape="RoundRectangle 12">
+                StrokeShape="RoundRectangle 6">
 
                 <Border.Shadow>
                     <Shadow 

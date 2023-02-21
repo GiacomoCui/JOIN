@@ -48,6 +48,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiImage Remove="Resources\Images\fireemblemimg.png" />
 	  <MauiImage Remove="Resources\Images\icnmenuclose.png" />
 	</ItemGroup>
 
@@ -68,12 +69,19 @@
 	  <None Remove="Resources\Fonts\Roboto-ThinItalic.ttf" />
 	  <None Remove="Resources\Images\callofdutywarzone.png" />
 	  <None Remove="Resources\Images\error.png" />
+	  <None Remove="Resources\Images\fireemblemimg.png" />
+	  <None Remove="Resources\Images\fireemblemimg2.png" />
+	  <None Remove="Resources\Images\goimg.jpeg" />
+	  <None Remove="Resources\Images\hearthstoneimg.png" />
 	  <None Remove="Resources\Images\icnmenuclosedark.png" />
 	  <None Remove="Resources\Images\icnsearch.png" />
 	  <None Remove="Resources\Images\imgprofilo.png" />
 	  <None Remove="Resources\Images\joinlogo.gif" />
 	  <None Remove="Resources\Images\leftarrow.png" />
+	  <None Remove="Resources\Images\mariokartimg.png" />
+	  <None Remove="Resources\Images\peggleimg.png" />
 	  <None Remove="Resources\Images\shareicon.png" />
+	  <None Remove="Resources\Images\smashimg.png" />
 	  <None Remove="Resources\Images\youtube_icon.png" />
 	  <None Remove="Resources\Images\icons8_chevron-24.png" />
 	  <None Remove="Resources\Images\icons8_chevron-48.png" />

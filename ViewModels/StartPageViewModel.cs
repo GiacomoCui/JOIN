@@ -90,12 +90,28 @@ public partial class StartPageViewModel : AppViewModelBase
 
         tournamentSearchResult.Data.ForEach(x => { x.Attributes.RelationshipsCopy = x.Relationships;});
 
+        tournamentSearchResult.Data.ForEach(x => { x.Attributes.ImmagineTorneo = ImpostaImmagine(x); });
+
         tournamentSearchResult.Data.ForEach(x => { if (x.Attributes.SignupCap is null) x.Attributes.SignupCap = "Infinito"; });
 
         ImpostaOrganizzatore(tournamentSearchResult);
 
-            TournamentResponseVariable.AddRange(tournamentSearchResult.Data);
+        TournamentResponseVariable.AddRange(tournamentSearchResult.Data);
         
+    }
+
+    private static string ImpostaImmagine(Tournament x)
+    {
+        return x.Attributes.GameName switch
+        {
+            "Peggle" => "peggleimg.png",
+            "Go" => "goimg.jpeg",
+            "Fire Emblem Awakening" => "fireemblemimg2.png",
+            "Mario Kart 64" => "mariokartimg.png",
+            "Hearthstone: Heroes of Warcraft" => "hearthstoneimg.png",
+            "Super Smash Bros." => "smashimg.png",
+            _ => "callofdutywarzone.png",
+        };
     }
 
     private static void ImpostaOrganizzatore(TournamentResponse arg)
@@ -121,7 +137,7 @@ public partial class StartPageViewModel : AppViewModelBase
     {
         string username;
         username = "KiritoVegetable"; //inserire qui la funzione per prendere il nome dell'utente
-        return $"Ben tornato, {username}";
+        return $"Ben tornato";
     }
 
 

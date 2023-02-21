@@ -43,7 +43,7 @@
         
         <Grid
             RowSpacing="12"
-            ColumnDefinitions="Auto,*">
+            ColumnDefinitions="120,*">
 
             <Frame
                 Grid.Column="0"
@@ -56,8 +56,8 @@
                 <Image
                     HorizontalOptions="Fill"
                     VerticalOptions="Fill"
-                    Aspect="AspectFill"
-                    Source="callofdutywarzone.png"/>
+                    Aspect="AspectFit"
+                    Source="{Binding Attributes.ImmagineTorneo}"/>
             </Frame>
 
             <Grid

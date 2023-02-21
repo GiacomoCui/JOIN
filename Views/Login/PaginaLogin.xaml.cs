@@ -1,20 +1,22 @@
 using JOIN.Control;
+using JOIN_App.ViewControls.Utenti;
 using NpgsqlTypes;
-
 namespace JOIN.Views.Login;
 
 public partial class PaginaLogin : ContentPage
 {
 	public PaginaLogin()
 	{
-
         InitializeComponent();
         NavigationPage.SetHasNavigationBar(this, false);
     }
 
 	private async void Registrati(object sender, EventArgs e) {
 		await Navigation.PushAsync(new PaginaRegistazione());
-	}
+        
+    }
+
+
 
 	private async void Accedi(object sender, EventArgs e)
 	{
@@ -57,7 +59,10 @@ public partial class PaginaLogin : ContentPage
         }
 
         else
-            await Navigation.PushAsync(new StartPage());
+        {
+            Utente user = new Utente(nome);
+            await Navigation.PushAsync(new StartPage(user));
+        }
 
         con.Close(); //Chiusura
 

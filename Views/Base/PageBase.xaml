@@ -96,7 +96,7 @@
             <Grid 
                 x:Name="PageIconsGrid"
                 Grid.Column="2"
-                Margin="0,4"
+                Margin="5,4,0,4"
                 VerticalOptions="Center"
                 HorizontalOptions="End"/>
 

@@ -55,9 +55,10 @@ public partial class TournamentDetailsPage : ViewBase<TournamentDetailsPageViewM
 
     //Da inserire la modifica del profilo
 
-    private void Accetta_Clicked(object sender, EventArgs e)
+    private async void Accetta_Clicked(object sender, EventArgs e)
     {
-
+        await Task.Delay(1000);
+        await DisplayAlert("Iscritto!", "L'iscrizione è andata a buon fine", "daje!");
     }
 
     private async void Annulla_Clicked(object sender, EventArgs e)

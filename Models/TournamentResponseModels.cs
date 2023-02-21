@@ -49,6 +49,9 @@ public class Attributes
     [JsonPropertyName("private")]
     public bool @Private { get; set; }
 
+    [JsonPropertyName("gameName")]
+    public string GameName { get; set; }
+
     [JsonPropertyName("description")]
     public string Description { get; set; }
 
@@ -104,6 +107,8 @@ public class Attributes
     public string OrganizerImageUrl { get; set; }
 
     public Relationships RelationshipsCopy { get; set; }
+
+    public string ImmagineTorneo { get; set; }
 
 }
 
